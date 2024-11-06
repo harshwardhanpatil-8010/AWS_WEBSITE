@@ -18,4 +18,5 @@ const newsletterSchema = new mongoose.Schema({
         default: Date.now,
     },
 });
+
 export default mongoose.model('Newsletter', newsletterSchema);
