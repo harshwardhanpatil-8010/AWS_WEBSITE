@@ -26,7 +26,6 @@ app.get('/news', (req, res) => {
 });
 app.use('/newsletters', newslettersRouter);
 
-
 app.get('/', (req, res) => {
     res.send('Server is ready');
 });
