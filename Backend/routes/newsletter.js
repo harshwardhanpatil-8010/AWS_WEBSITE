@@ -25,7 +25,7 @@ router.post('/add', async (req, res) => {
         const savedNewsletter = await newNewsletter.save();
         res.status(201).json(savedNewsletter);
     } catch (error) {
-        console.error('Error details:', error); // Log the error details
+        console.error('Error details:', error);
         res.status(500).json({ message: 'Error adding newsletter', error: error.message });
     }
 });
