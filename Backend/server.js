@@ -6,6 +6,7 @@ import contactRouter from './api/auth.js';
 import connectDB from './config/db.js';
 import newslettersRouter from './routes/newsletter.js';
 import eventRouter from './routes/Events.js';
+
 import path from 'path';
 
 
@@ -34,8 +35,7 @@ app.use('/newsletters', newslettersRouter);
 app.get('/events', (req, res) => {
     res.sendFile(path.resolve('./api/events.html'));
 });
-app.use('/events', eventRouter); 
-
+app.use('/events', eventRouter);
 
 app.get('/', (req, res) => {
     res.send('Server is ready');

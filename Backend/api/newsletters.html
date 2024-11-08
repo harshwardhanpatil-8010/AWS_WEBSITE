@@ -46,11 +46,9 @@
             } catch (error) {
                 const container = document.getElementById('newsletter-container');
                 container.innerHTML = `<p>Error loading newsletters.</p>`;
-                console.error('Fetch error:', error); // Log the full error for debugging
+                console.error('Fetch error:', error); 
             }
         }
-        
-        // Fetch all newsletters on page load
         fetchNewsletters();
     </script>
 </body>
