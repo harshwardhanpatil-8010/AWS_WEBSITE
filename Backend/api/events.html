@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .events-container { max-width: 800px; margin: 20px auto; padding: 20px; }
+    .event { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+    .event-title { font-size: 1.5em; margin: 0; }
+    .event-image { width: 100%; height: auto; margin-top: 8px; border-radius: 8px; }
+    .event-date { color: #888; font-size: 0.8em; }
+  </style>
+</head>
+<body>
+  <div class="events-container" id="events-container">
+    <h2>All Events</h2>
+    <p>Loading Events...</p>
+  </div>
+  <script>
+    async function fetchEvents() {
+      try {
+        const response = await fetch('http://localhost:8000/events');
+        if (!response.ok) throw new Error(`Failed to fetch events: ${response.status}`);
+        
+        const events = await response.json();
+        const container = document.getElementById('events-container');
+        container.innerHTML = '';
+        
+        events.forEach(event => {
+          const eventElement = document.createElement('div');
+          eventElement.classList.add('event');
+          
+          eventElement.innerHTML = `
+            <h3 class="event-title">${event.name}</h3>
+            <p>${event.description}</p>
+            <p><strong>Location:</strong> ${event.location}</p>
+            <p><strong>Date:</strong> ${event.date}</p>
+            ${event.image ? `<img src="${event.image}" class="event-image" alt="Event Image">` : ''}
+          `;
+          
+          container.appendChild(eventElement);
+        });
+      } catch (error) {
+        const container = document.getElementById('events-container');
+        container.innerHTML = `<p>Error loading events.</p>`;
+        console.error(error);
+      }
+    }
+    fetchEvents();
+  </script>
+</body>
+</html>
