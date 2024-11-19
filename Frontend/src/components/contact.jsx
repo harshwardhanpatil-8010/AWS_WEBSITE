@@ -41,7 +41,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-cyan-400 rounded-lg p-4">
+    <div className="bg-cyan-400 drop-shadow-lg relative p-6 rounded-lg shadow-lg ease-in-out">
       <h1>Contact Us</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
@@ -72,7 +72,7 @@ const ContactUs = () => {
 
         <label htmlFor="description">Message:</label>
         <br />
-        <textarea
+        <textarea className="resize-none"
           id="description"
           name="description"
           value={formData.description}
@@ -82,7 +82,7 @@ const ContactUs = () => {
         <br />
         <br />
 
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded ease-in-out">Submit</button>
       </form>
       {message && <p>{message}</p>}
     </div>

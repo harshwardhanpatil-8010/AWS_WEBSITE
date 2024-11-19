@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve React build files
+
 app.use("/newsletters", newslettersRouter);
 app.use("/", contactRouter);
 app.use("/events", eventsRouter);
