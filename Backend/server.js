@@ -7,12 +7,13 @@ import connectDB from "./config/db.js";
 import newslettersRouter from "./routes/newsletter.js";
 import eventsRouter from "./routes/Events.js";
 import path from "path";
+const helmet = require('helmet');
 
 dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

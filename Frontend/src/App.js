@@ -4,6 +4,11 @@ import Newsletters from "./pages/newsletter.jsx";
 import Home from "./pages/home.jsx";
 import Events from "./pages/events.jsx";
 import Team from "./pages/domain.jsx";
+
+// const apiUrl = process.env.REACT_APP_API_URL;
+// fetch(`${apiUrl}/api/resource`)
+//     .then(response => response.json())
+//     .then(data => console.log(data));
 function App() {
   return (
     
