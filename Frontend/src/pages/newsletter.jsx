@@ -37,10 +37,10 @@ const Newsletters = () => {
       <h2 className="text-2xl font-semibold mb-4">All Newsletters</h2>
 
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
         {newsletters.map(newsletter => (
           <div
-            className="border border-gray-300 rounded-lg p-4 shadow-md bg-white"
+            className="border border-gray-300 rounded-lg p-4 shadow-md bg-white "
             key={newsletter.id}
           >
             <h3 className="text-xl font-bold mb-2">{newsletter.title}</h3>

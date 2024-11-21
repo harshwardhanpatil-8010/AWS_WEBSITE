@@ -15,9 +15,7 @@ const ContactUs = () => {
   };
 
   const handleSubmit = async (e) => {
-    
-    
-
+  
     try {
         const response = await fetch("http://localhost:8000/contact", {
             method: "POST",
