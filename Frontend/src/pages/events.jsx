@@ -9,28 +9,23 @@ const Events = () => {
     async function fetchEvents() {
       try {
         const response = await fetch('http://localhost:8000/events');
-        const responseText = await response.text();
-        console.log('Response Text:', responseText);
-  
+        
         if (!response.ok) {
           throw new Error(`Failed to fetch events: ${response.statusText}`);
         }
-  
 
-        const data = JSON.parse(responseText);
+        const data = await response.json(); // Correct JSON parsing
         setEvents(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error fetching events:', error);
         setError(error.message);
         setLoading(false);
       }
     }
-  
+
     fetchEvents();
   }, []);
-  
-  
 
   if (loading) {
     return <div className="text-center text-gray-600">Loading Events...</div>;
