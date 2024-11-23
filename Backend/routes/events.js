@@ -1,5 +1,6 @@
 import express from 'express';
 import Event from '../models/eventSchema.js';
+import { isAuthenticated } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
@@ -11,7 +12,8 @@ router.get('/events', async (req, res) => {
     res.status(500).json({ message: 'Error fetching events', error: err.message });
   }
 });
-router.post('/add', async (req, res) => {
+
+router.post('/add', isAuthenticated, async (req, res) => {
   try {
     const { name, date, location, description, image } = req.body;
     
@@ -30,4 +32,5 @@ router.post('/add', async (req, res) => {
     res.status(500).json({ message: 'Error adding event', error: error.message });
   }
 });
+
 export default router;

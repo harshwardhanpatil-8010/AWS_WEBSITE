@@ -6,8 +6,10 @@ import contactRouter from "./api/auth.js";
 import connectDB from "./config/db.js";
 import newslettersRouter from "./routes/newsletter.js";
 import eventsRouter from "./routes/Events.js";
+import adminRouter from "./routes/admin.js";
 import path from "path";
-const helmet = require('helmet');
+import helmet from "helmet";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 connectDB();
@@ -19,11 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 
 app.use("/newsletters", newslettersRouter);
 app.use("/", contactRouter);
 app.use("/events", eventsRouter);
+app.use("/admin", adminRouter);
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../Frontend/build")));
 
