@@ -1,4 +1,5 @@
  import ContactUs from "../components/contact.jsx";
+
 const Home = () => {
     
 return(
@@ -6,6 +7,7 @@ return(
        {/* dark:bg-slate-900 */}
        <h1 className="text-2xl text-center mb-6">Home Page</h1>
   <ContactUs/> 
+  
     </div>
    
 );

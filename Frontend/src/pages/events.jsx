@@ -14,7 +14,7 @@ const Events = () => {
           throw new Error(`Failed to fetch events: ${response.statusText}`);
         }
 
-        const data = await response.json(); // Correct JSON parsing
+        const data = await response.json();  
         setEvents(data);
         setLoading(false);
       } catch (error) {
