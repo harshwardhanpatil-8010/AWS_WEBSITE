@@ -1,9 +1,10 @@
 import express from 'express';
 import Event from '../models/eventSchema.js';
+import { isAuthenticated } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
-// GET all events
+
 router.get('/', async (req, res) => {
   try {
     const events = await Event.find(); 
@@ -15,8 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 
-// POST add a new event
-router.post('/add', async (req, res) => {
+router.post('/add', isAuthenticated, async (req, res) => {
   try {
     const { name, date, location, description, image } = req.body;
 
