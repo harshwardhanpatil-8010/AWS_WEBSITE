@@ -60,6 +60,7 @@ const Newsletters = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Newsletters;
