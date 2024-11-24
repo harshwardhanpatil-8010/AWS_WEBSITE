@@ -23,23 +23,23 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-
 app.use("/newsletters", newslettersRouter);
 app.use("/", contactRouter);
 app.use("/events", eventsRouter);
 app.use("/admin", adminRouter);
+
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../Frontend/build")));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../Frontend/build/index.html"));
-  });
+  res.sendFile(path.resolve(__dirname, "../Frontend/build/index.html"));
+});
 
 app.get("/", (req, res) => {
-    res.send("Server is ready");
+  res.send("Server is ready");
 });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
