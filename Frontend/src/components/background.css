@@ -1,0 +1,23 @@
+/* Full-page background styles */
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keeps it behind other elements */
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+  }
+  
+  .background-layer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(to right, #172554 2px, transparent 1px),
+      linear-gradient(to bottom, #172554 2px, transparent 1px);
+    background-size: 75px 75px;
+    mask-image: radial-gradient(ellipse 50% 70% at 50% 0%, #000 80%, transparent 110%);
+    -webkit-mask-image: radial-gradient(ellipse 50% 70% at 50% 0%, #000 80%, transparent 110%);
+  }
+  

@@ -1,15 +1,25 @@
- import ContactUs from "../components/contact.jsx";
+//import ContactUs from "../components/contact.jsx";
+//import Footer from "../components/Footer.jsx";
+//import Card from "../components/card.jsx";
+import Navbar from "../components/navbar.jsx";
+import Background from "../components/background.jsx";
+//import ImageWithTypingEffect from "../components/image_main.jsx";
 
 const Home = () => {
+  return (
     
-return(
-    <div className=" min-h-screen inset-0 overflow-hidden h-full w-full items-center px-5 py-24 [background:linear-gradient(1500deg,#0B0047,#2274D5)]">  
-       {/* dark:bg-slate-900 */}
-       <h1 className="text-2xl text-center mb-6">Home Page</h1>
-  <ContactUs/> 
-  
-    </div>
+      <>
+      <Background />
+      <div className="wrapper">
+      <Navbar />
+      
+      {/* <ImageWithTypingEffect />
+       <Card/>   
+      <ContactUs /> ˀ
+      <Footer /> */}
+     </div>
+     </>
    
-);
-}        
+  );
+};
 export default Home;

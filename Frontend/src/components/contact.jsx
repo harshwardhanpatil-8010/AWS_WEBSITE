@@ -39,7 +39,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-cyan-400 drop-shadow-lg relative p-6 rounded-lg shadow-lg ease-in-out">
+    <div className="realtive bg-cyan-400 container mx-auto px-4 drop-shadow-lg p-6 rounded-lg shadow-lg ease-in-out isolate overflow-hidden object-cover z-[100] ">
       <h1>Contact Us</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
