@@ -9,7 +9,7 @@ const Navbar = ({ logoSize = "h-12 w-auto" }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="mt-4 bg-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-md rounded-lg border border-white/20 p-4">
+    <nav className="mt-4bg-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-lg rounded-lg border border-white/20 p-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
          <div className="flex-shrink-0">
