@@ -8,7 +8,7 @@ const TypingEffect = () => {
       
         <Typewriter
           words={["Amazon Web Services Cloud Clubs"]}
-          loop={1} // Run the effect once
+          loop={1} 
           typeSpeed={50}
  
         />

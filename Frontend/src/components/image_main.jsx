@@ -3,7 +3,7 @@ import TypingEffect from "./AWS_name";
 
 const ImageWithTypingEffect = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className=" h-screen flex items-center justify-center">
       {/* Image container */}
       <div className="relative w-1/2 h-1/2">
         {/* Background Image */}

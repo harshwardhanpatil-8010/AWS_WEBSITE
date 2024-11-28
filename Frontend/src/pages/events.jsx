@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import Navbar from '../components/navbar';
+import Background from '../components/background';
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +37,11 @@ const Events = () => {
   }
 
   return (
-    <div className="events-container max-w-4xl mx-auto p-5">
+    <>
+    <Background />
+
+    <div className="wrapper">
+      <Navbar />
       <h2 className="text-2xl font-semibold mb-6">All Events</h2>
       
       {events.map((event, index) => (
@@ -55,6 +60,7 @@ const Events = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

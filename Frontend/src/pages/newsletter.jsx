@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import Background from '../components/background';
+import Navbar from '../components/navbar';
 const Newsletters = () => {
   const [newsletters, setNewsletters] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,6 @@ const Newsletters = () => {
       try {
         const response = await fetch('http://localhost:8000/newsletters');
         if (!response.ok) throw new Error(`Failed to fetch newsletters: ${response.statusText}`);
-        
         const data = await response.json();
         setNewsletters(data);
         setLoading(false);
@@ -32,8 +32,11 @@ const Newsletters = () => {
   }
 
   return (
-    <div className="relative min-h-screen inset-0 overflow-hidden h-full w-full justify-center items-center px-5 py-24 [background:linear-gradient(125deg,#005276,#38ef7d)]">
-      
+    <>
+    <Background />
+
+    <div className="wrapper">
+      <Navbar />
       <h2 className="text-2xl font-semibold mb-4">All Newsletters</h2>
 
       
@@ -59,6 +62,7 @@ const Newsletters = () => {
         ))}
       </div>
     </div>
+    </>
   );
   
 };
