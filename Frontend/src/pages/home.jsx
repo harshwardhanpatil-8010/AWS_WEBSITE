@@ -1,20 +1,23 @@
-import ContactUs from "../components/contact.jsx";
-import Footer from "../components/Footer.jsx";
+//import ContactUs from "../components/contact.jsx";
+import Footer from "../components/contact.jsx";
 //import Card from "../components/card.jsx";
 import Navbar from "../components/navbar.jsx";
 import Background from "../components/background.jsx";
-//import ImageWithTypingEffect from "../components/image_main.jsx";
 
+import FAQPage from "../components/faq.jsx";
+import Landing from "../components/landing.jsx";
 const Home = () => {
   return (
       <>
       <Background />
       <div className="wrapper">
       <Navbar />
-     {/* <ImageWithTypingEffect />  */}
+      <Landing />
+     
        {/* <Card/>     */}
-     <ContactUs /> 
-      <Footer />
+     {/* <ContactUs />  */}
+     <FAQPage />
+       <Footer /> 
      </div>
      </>
   );

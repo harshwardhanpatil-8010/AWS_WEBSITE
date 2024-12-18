@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 function Card() {
     return (
-        <div className="flex items-center justify-center h-auto p-6">
+        <div className="dflex items-center justify-center h-auto p-6">
             <div className="max-w-sm w-full bg-gradient-to-br from-green-500 via-blue-500
             to-purple-600 rounded-3xl shadow-2xl overflow-hidden transform transition-transform
             duration-500 hover:scale-105 hover:shadow-3xl">

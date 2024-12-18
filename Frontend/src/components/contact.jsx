@@ -1,90 +1,140 @@
 import React, { useState } from "react";
+import UpperSection from "./Footer_up.jsx";
+import LowerSection from "./Footer_low.jsx";
 
-const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    description: "",
-  });
+const Footer = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const [message, setMessage] = useState("");
+  const toggleForm = () => {
+    setIsFormVisible(!isFormVisible);
+    setError("");
+    setSuccess("");
+  };
 
-  const handleChange = (e) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    setSuccess("Form submitted successfully!");
+    setFormData({ name: "", email: "", message: "" }); 
+  };
+
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-  
-    try {
-        const response = await fetch("http://localhost:8000/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
-        
-
-      const data = await response.json();
-      if (response.ok) {
-        setMessage(data.message);
-      } else {
-        setMessage(data.error);
-      }
-    } catch (error) {
-      setMessage("Error sending message.");
-    }
-    
-  };
-
   return (
-    <div className="realtive bg-cyan-400 container mx-auto px-4 drop-shadow-lg p-6 rounded-lg shadow-lg ease-in-out isolate overflow-hidden object-cover z-[100] ">
-      <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <br />
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <br />
+    <footer
+      className="relative bg-white/30 backdrop-blur-lg rounded-lg shadow-md"
+      style={{
+        background: "rgba(255, 255, 255, 0.15)",
+        border: "1px solid rgba(255, 255, 255, 0.2)",
+      }}
+    >
+      
+      {isFormVisible && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-md z-10"></div>
+      )}
 
-        <label htmlFor="email">Email:</label>
-        <br />
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <br />
+      
+      <div className="bg-transparent">
+        <UpperSection toggleForm={toggleForm} />
+      </div>
 
-        <label htmlFor="description">Message:</label>
-        <br />
-        <textarea className="resize-none"
-          id="description"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          required
-        ></textarea>
-        <br />
-        <br />
+      
+      <div className="bg-transparent">
+        <LowerSection />
+      </div>
 
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded ease-in-out">Submit</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+      
+      {isFormVisible && (
+        <div
+          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 p-6 shadow-lg rounded-lg w-[90%] max-w-md z-20"
+          style={{
+            animation: "slideUp 0.5s ease-in-out",
+          }}
+        >
+          <h3 className="text-xl font-bold mb-4 text-center">Contact Us</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                rows="3"
+                className="w-full border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+              ></textarea>
+            </div>
+
+            
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+
+            
+            {success && <p className="text-green-500 text-sm">{success}</p>}
+
+            <div className="flex justify-between">
+              <button type="submit" className="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow hover:bg-yellow-600">
+                Submit
+              </button>
+              <button
+                type="button"
+                className="text-gray-500 underline hover:text-black"
+                onClick={toggleForm}
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+    </footer>
   );
 };
 
-export default ContactUs;
+export default Footer;
