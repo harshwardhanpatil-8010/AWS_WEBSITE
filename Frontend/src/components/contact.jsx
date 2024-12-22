@@ -14,26 +14,44 @@ const Footer = () => {
     setSuccess("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
-
+  
     // Validation
     if (!formData.name || !formData.email || !formData.message) {
       setError("Please fill in all fields.");
       return;
     }
-
+  
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
       setError("Please enter a valid email address.");
       return;
     }
-
-    setSuccess("Form submitted successfully!");
-    setFormData({ name: "", email: "", message: "" }); 
+  
+    // Send data to the backend (contact route)
+    try {
+      const response = await fetch('/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        setSuccess("Form submitted successfully!");
+        setFormData({ name: "", email: "", message: "" }); // Reset form
+      } else {
+        setError(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setError("Failed to send message. Please try again later.");
+    }
   };
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });

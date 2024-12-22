@@ -34,7 +34,8 @@ const LowerSection = () => {
 
       
       <div className="text-white text-sm text-center mt-4">
-        ©️ 2024 All rights reserved.
+      
+        © 2024 All rights reserved.
       </div>
     </div>
   );
