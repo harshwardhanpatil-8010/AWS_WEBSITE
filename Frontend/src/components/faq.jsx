@@ -3,12 +3,12 @@ import React, { useState } from "react";
 const FAQPage = () => {
   const faqs = [
     {
-      question: "What is the full form of AWS?",
-      answer: "Amazon Web Services",
+      question: "What Sets Us Apart?",
+      answer: "As a university-level club, we are not limited to a single department or area of expertise. Our inclusive structure allows students from all disciplines to contribute and thrive. From hosting tech-driven events to managing non-technical operations like finance, sponsorship, and editorial activities, we ensure holistic growth for our members.",
     },
     {
-      question: "What is AWS?",
-      answer: "AWS is a comprehensive cloud computing platform...",
+      question: "Why Join Us?",
+      answer: "The AWS Cloud Clubs, MIT-WPU, is your gateway to mastering AWS cloud technologies while gaining invaluable experience in teamwork, leadership, and project execution. Whether you're an aspiring cloud professional or someone seeking to explore diverse roles in event management, our club offers a platform to grow and excel.",
     },
     {
       question: "What does AWS do?",
@@ -23,7 +23,7 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="relative mt-4 p-4">
+    <div className="relative mt-4 p-4 sm:p-6">
     
       <main className="container mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-center">
 

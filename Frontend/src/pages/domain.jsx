@@ -2,19 +2,18 @@ import Navbar from "../components/navbar";
 import Background from "../components/background";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
+import LowerSection from "../components/Footer_low";
 
-// Unified Card component for all rows
 const Card = ({ data }) => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out w-80 h-[450px]">
-      <div className="relative w-full h-72">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out w-full sm:w-72 md:w-80 h-[450px]">
+      <div className="relative w-full h-86">
         <img
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
           src={data.img}
           alt={data.name}
         />
         <div className="absolute inset-0 bg-black opacity-30 hover:opacity-0 transition-opacity duration-300"></div>
-        {/* Ensure icon is above overlay */}
         <div className="absolute bottom-0 right-0 p-4 z-10">
           {data.linkedin && (
             <a
@@ -28,12 +27,12 @@ const Card = ({ data }) => {
           )}
         </div>
       </div>
-      <div className="p-6 flex flex-col justify-between h-[calc(450px-12rem)] text-center">
+      <div className="p-6 flex flex-col justify-between h-[calc(450px-16rem)] text-center">
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-3">
+          <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-3">
             {data.name}
           </h2>
-          <p className="text-gray-300 text-sm mb-4">{data.role}</p>
+          <p className="text-gray-300 text-sm md:text-base mb-4">{data.role}</p>
         </div>
       </div>
     </div>
@@ -50,7 +49,7 @@ const Team = () => {
     },
     {
       name: "",
-      role: "", 
+      role: "",
       img: "images/neon green.png",
       linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
     },
@@ -79,7 +78,7 @@ const Team = () => {
       linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
     },
     {
-      name: "Sneh shah",
+      name: "Sneh Shah",
       role: "",
       img: "images/red.png",
       linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
@@ -90,30 +89,31 @@ const Team = () => {
     <>
       <Navbar />
       <Background />
-      <h1 className="text-white text-6xl font-bold text-center mt-24 mb-16 animate-pulse">
+      <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center mt-16 sm:mt-24 mb-12 sm:mb-16 animate-pulse">
         Know Your Domain
       </h1>
-      <div className="container mx-auto px-4 py-12 flex justify-center items-center">
-        <div className="flex flex-col gap-16">
-          <h2 className="text-white text-4xl font-bold text-center">Mentors</h2>
-          <div className="flex justify-center gap-8">
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex flex-col gap-12 sm:gap-16">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold text-center">Mentors</h2>
+          <div className="flex flex-wrap justify-center gap-8">
             {data.slice(0, 2).map((d, index) => (
               <Card key={index} data={d} />
             ))}
           </div>
-          <h2 className="text-white text-4xl font-bold text-center">Admin Panel</h2>
-          <div className="flex justify-center items-center">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold text-center">Admin Panel</h2>
+          <div className="flex flex-wrap justify-center gap-8">
             {data.slice(2, 3).map((d, index) => (
               <Card key={index} data={d} />
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-            {data.slice(3).map((d, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+            {data.slice(3, 7).map((d, index) => (
               <Card key={index} data={d} />
             ))}
           </div>
         </div>
       </div>
+      <LowerSection />
     </>
   );
 };

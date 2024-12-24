@@ -2,3 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import custom styles */
+@import './components/mobile.css';
+@import './styles/spacing.css';
+
+/* Global responsive adjustments */
+
+/* Global responsive adjustments */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, 
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem 1rem;
+  }
+  
+  input, 
+  select {
+    min-height: 44px;
+  }
+}
+
