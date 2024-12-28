@@ -1,0 +1,103 @@
+/* App.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+  height: 100vh;
+  background: radial-gradient(circle, #8236C8, #0B0047);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 5%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+.logo-image {
+  width: 55px; /* Adjust width as needed */
+  height: auto; /* To maintain aspect ratio */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: #D1C4E9;
+}
+.top{
+  /* position: relative;
+  display: flex;
+  flex-direction: row; */
+  margin-top:100px;
+  display: flex;             /* Use flexbox to align items in a row */
+  align-items: center;       /* Vertically center the items */
+  justify-content: center;   /* Center the items horizontally, if needed */
+  gap: 10px;
+  color: white;
+}
+
+
+/* App.css*/
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+
+.top .text{
+  /* position: absolute; */
+  text-align: left;
+  left: 20px;  
+}
+
+.next-icon{
+  /* z-index: 35; */
+  width: 35px;
+  height: 35px;
+  color: white;
+  position: absolute;
+  right: 20px;              /* Positioned on the extreme right */
+  top: 55%;  
+}
+.next-icon:hover {
+  transform: scale(1.2);
+}
