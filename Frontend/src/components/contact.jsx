@@ -84,7 +84,7 @@ const Footer = () => {
       
       {isFormVisible && (
         <div
-          className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 p-4 sm:p-6 shadow-lg rounded-lg w-[95%] sm:w-[90%] max-w-md z-20 max-h-[90vh] overflow-y-auto"
+          className="fixed bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 p-4 sm:p-6 shadow-lg rounded-lg w-[95%] sm:w-[90%] max-w-md z-20 max-h-[90vh] overflow-y-auto"
           style={{
             animation: "slideUp 0.5s ease-in-out",
           }}
