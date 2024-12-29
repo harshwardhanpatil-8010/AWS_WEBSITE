@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import './App.css';
 import CardComponent from './CardComponent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FaArrowRight, FaChevronRight } from 'react-icons/fa';
 
-function App() {
+function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDelayed, setIsDelayed] = useState(false);
 
@@ -80,13 +78,12 @@ function App() {
 
       <div className="mt-[100px] flex items-center justify-center gap-2 text-white">
         <p className="text-left">Know Your Domain</p>
-        <FontAwesomeIcon icon={faChevronRight} size="lg" />
+        <FaChevronRight />
         <p>{domains[currentIndex].text}</p>
       </div>
 
-      <FontAwesomeIcon 
-        icon={faArrowRight} 
-        className="w-[35px] h-[35px] text-white absolute right-5 top-1/2 transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
+      <FaArrowRight
+        className="w-[35px] h-[35px] text-white cursor-pointer" 
         onClick={handleClick} 
       />
 
@@ -116,4 +113,4 @@ function App() {
   );
 }
 
-export default App;
+export default HeadsCard;

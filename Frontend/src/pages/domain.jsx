@@ -3,6 +3,7 @@ import Background from "../components/background";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import LowerSection from "../components/Footer_low";
+import HeadsCard from "../components/App";
 
 const Card = ({ data }) => {
   return (
@@ -114,6 +115,7 @@ const Team = () => {
         </div>
       </div>
       <LowerSection />
+      <HeadsCard/>
     </>
   );
 };
