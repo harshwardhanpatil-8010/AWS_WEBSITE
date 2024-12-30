@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
+// import './App.css';
 import CardComponent from './CardComponent';
-import { FaArrowRight, FaChevronRight } from 'react-icons/fa';
+import { RiArrowRightSLine, RiArrowRightCircleLine } from 'react-icons/ri';
+
 
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,6 +49,143 @@ function HeadsCard() {
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
           text: "More Event Operations info"
+        },
+        {
+          id: "card3",
+          imgSrc: "./3.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Event Operations3 info"
+        }
+      ]
+    },
+    {
+      text: "Graphic Arts and Design",
+      cards: [
+        {
+          id: "card1",
+          imgSrc: "./1.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event1@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "Graphic Arts and Design member details"
+        }
+      ]
+    },
+    {
+      text: "Social Media and Promotions",
+      cards: [
+        {
+          id: "card1",
+          imgSrc: "./1.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event1@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "Social Media and Promotions member details"
+        },
+        {
+          id: "card2",
+          imgSrc: "./2.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Social Media and Promotions info"
+        },
+        {
+          id: "card3",
+          imgSrc: "./3.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Social Media and Promotions3 info"
+        }
+      ]
+    },
+    {
+      text: "Editorial Team",
+      cards: [
+        {
+          id: "card1",
+          imgSrc: "./1.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event1@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "Editorial Team member details"
+        },
+        {
+          id: "card2",
+          imgSrc: "./2.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Editorial Team info"
+        },
+        {
+          id: "card3",
+          imgSrc: "./3.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Editorial Team3 info"
+        }
+      ]
+    },
+    {
+      text: "Finance Team Team",
+      cards: [
+        {
+          id: "card1",
+          imgSrc: "./1.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event1@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "Finance Team Team member details"
+        },
+        {
+          id: "card2",
+          imgSrc: "./2.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Finance Team Team info"
+        },
+        {
+          id: "card3",
+          imgSrc: "./3.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Finance Team Team3 info"
+        }
+      ]
+    },
+    {
+      text: "Sponsorship Team Team",
+      cards: [
+        {
+          id: "card1",
+          imgSrc: "./1.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event1@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "Sponsorship Team Team member details"
+        },
+        {
+          id: "card2",
+          imgSrc: "./2.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Sponsorship Team Team info"
+        },
+        {
+          id: "card3",
+          imgSrc: "./3.jpg",
+          githubLink: "https://github.com",
+          emailLink: "mailto:event2@gmail.com",
+          linkedinLink: "https://linkedin.com",
+          text: "More Sponsorship Team Team3 info"
         }
       ]
     }
@@ -66,24 +206,26 @@ function HeadsCard() {
       
       <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-[5%] py-3 box-border bg-white/10 backdrop-blur-md">
         <div className="text-xl font-bold text-white flex items-center">
-          <img src="/logo.png" alt="Logo" className="w-[55px] h-auto" />
+          {/* <img src="/logo.png" alt="Logo" className="w-[55px] h-auto" /> */}
         </div>
-        <ul className="list-none flex gap-8">
+        {/* <ul className="list-none flex gap-8">
           <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Home</li>
           <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Domains</li>
           <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Events</li>
           <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Newsletters</li>
-        </ul>
+        </ul> */}
       </nav>
 
-      <div className="mt-[100px] flex items-center justify-center gap-2 text-white">
+      <div className="mt-[100px] flex items-center justify-center gap-7 text-white text-3xl">
         <p className="text-left">Know Your Domain</p>
-        <FaChevronRight />
+
+          <RiArrowRightSLine />
+          
         <p>{domains[currentIndex].text}</p>
       </div>
 
-      <FaArrowRight
-        className="w-[35px] h-[35px] text-white cursor-pointer" 
+      <RiArrowRightCircleLine
+        className="w-[35px] h-[35px] text-white absolute right-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
         onClick={handleClick} 
       />
 

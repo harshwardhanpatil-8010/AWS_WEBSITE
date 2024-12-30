@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import Background from "../components/background";
+import App from "../components/App";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import LowerSection from "../components/Footer_low";
@@ -114,6 +115,7 @@ const Team = () => {
           </div>
         </div>
       </div>
+      <App />
       <LowerSection />
       <HeadsCard/>
     </>
