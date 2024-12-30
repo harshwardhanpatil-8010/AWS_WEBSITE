@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+
 // import './App.css';
 import CardComponent from './CardComponent';
 import { RiArrowRightSLine, RiArrowRightCircleLine } from 'react-icons/ri';
 
-function App() {
+
+function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDelayed, setIsDelayed] = useState(false);
 
@@ -216,6 +218,7 @@ function App() {
 
       <div className="mt-[100px] flex items-center justify-center gap-7 text-white text-3xl">
         <p className="text-left">Know Your Domain</p>
+
           <RiArrowRightSLine />
           
         <p>{domains[currentIndex].text}</p>
@@ -252,4 +255,4 @@ function App() {
   );
 }
 
-export default App;
+export default HeadsCard;
