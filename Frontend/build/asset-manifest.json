@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.5c7cf1fd.css",
-    "main.js": "/static/js/main.0ef1aaa2.js",
+    "main.css": "/static/css/main.76befe16.css",
+    "main.js": "/static/js/main.56d25158.js",
+    "static/media/club-img.JPG": "/static/media/club-img.be306ff8b8fc82500587.JPG",
+    "static/media/b-w.png": "/static/media/b-w.557ecafb516e7cf866e3.png",
+    "static/media/mit_wpu_logo.png": "/static/media/mit_wpu_logo.b9b22af939fafbd320bf.png",
     "static/media/aws_navbar_img.png": "/static/media/aws_navbar_img.63007a99ba86eec12893.png",
     "index.html": "/index.html",
-    "main.5c7cf1fd.css.map": "/static/css/main.5c7cf1fd.css.map",
-    "main.0ef1aaa2.js.map": "/static/js/main.0ef1aaa2.js.map"
+    "main.76befe16.css.map": "/static/css/main.76befe16.css.map",
+    "main.56d25158.js.map": "/static/js/main.56d25158.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c7cf1fd.css",
-    "static/js/main.0ef1aaa2.js"
+    "static/css/main.76befe16.css",
+    "static/js/main.56d25158.js"
   ]
 }
