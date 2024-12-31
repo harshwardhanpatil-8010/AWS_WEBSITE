@@ -1,31 +1,47 @@
-// CardComponent.js
 import React, { useState } from 'react';
 import { IoMailOutline } from "react-icons/io5";
 import { BsLinkedin } from "react-icons/bs";
-import { FaGithub  } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Card = ({ id, imgSrc, githubLink, emailLink, linkedinLink, onHover }) => (
   <div 
-    className={`absolute w-[300px] h-[365px] rounded-lg bg-gray-800 shadow-lg transition-all duration-300 cursor-pointer hover:scale-110 z-[1]`}
+    className={`absolute w-[320px] h-[385px] rounded-xl shadow-2xl transition-all duration-500 cursor-pointer 
+    hover:scale-110 hover:shadow-[0_20px_50px_rgba(72,_85,_99,_0.7)] z-[1] bg-gradient-to-br from-gray-900 to-gray-800`}
     id={id}
     onMouseEnter={() => onHover(id)}
     onMouseLeave={() => onHover(null)}
   >
-    <img className="w-full h-[300px] rounded-t-lg" src={imgSrc} alt="Profile" />
-    <div className="flex justify-evenly items-center py-2 bg-white rounded-b-lg">
+    <img className="w-full h-[320px] rounded-t-xl object-cover" src={imgSrc} alt="Profile" />
+    <div className="flex justify-evenly items-center py-4 bg-gradient-to-r from-gray-700 to-gray-500 rounded-b-xl">
       {githubLink && (
-        <a href={githubLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-          <FaGithub src="./github.png" alt="GitHub" className="w-11 h-11"/>
+        <a 
+          href={githubLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="GitHub Profile"
+          className="transform transition-transform duration-300 hover:scale-125 hover:text-blue-400"
+        >
+          <FaGithub className="w-12 h-12 text-white"/>
         </a>
       )}
       {emailLink && (
-        <a href={emailLink} aria-label="Send Email">
-          <BsLinkedin src="./mail.png" alt="Email" className="w-11 h-11"/>
+        <a 
+          href={emailLink} 
+          aria-label="Send Email"
+          className="transform transition-transform duration-300 hover:scale-125 hover:text-blue-400"
+        >
+          <BsLinkedin className="w-12 h-12 text-white"/>
         </a>
       )}
       {linkedinLink && (
-        <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <IoMailOutline  src="./linkedin.png" alt="LinkedIn" className="w-11 h-11"/>
+        <a 
+          href={linkedinLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="LinkedIn Profile"
+          className="transform transition-transform duration-300 hover:scale-125 hover:text-blue-400"
+        >
+          <IoMailOutline className="w-12 h-12 text-white"/>
         </a>
       )}
     </div>
@@ -42,8 +58,8 @@ const CardComponent = ({ cardsData }) => {
     : cardsData[0]?.text || "No cards available";
 
   return (
-    <div className="flex flex-wrap justify-between items-start gap-[450px] mt-12">
-      <div className="relative flex gap-5">
+    <div className="flex flex-wrap justify-between items-start gap-[500px] mt-16">
+      <div className="relative flex gap-6">
         {cardsData.length > 0 ? (
           cardsData.map((card) => (
             <Card
@@ -53,80 +69,52 @@ const CardComponent = ({ cardsData }) => {
             />
           ))
         ) : (
-          <p className="text-white">No cards to display</p>
+          <p className="text-white font-semibold text-xl">No cards to display</p>
         )}
       </div>
-      <div className="w-[560px] h-[360px] p-5 border border-gray-300 bg-gradient-to-r text-white text-lg flex items-center justify-center">
+      <div className="w-[600px] h-[380px] p-8 border-2 border-blue-400 rounded-2xl 
+         text-white text-xl font-medium 
+        flex items-center justify-center shadow-lg transform transition-all duration-500
+        hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]">
         {currentCardText}
       </div>
 
-        <style>
-          {`/* Initial positions and overlapping */
-              #card1 {
-                top: 0;
-                left: 75px;
-                z-index: 2;
-              }
-              #card2:hover ~ #card1,
-              #card3:hover ~ #card1 {
-                z-index: 1; /* Center card moves below the hovered side card */
-              }
-              .icon {
-                width: 44px;
-                height: 44px;
-              }
-
-              #card2 {
-                top: 10px;
-                left: 30px;
-                z-index: 1;
-              }
-              .card-icons {
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                padding: 10px 0;
-                border-radius: 0 0 10px 10px;
-              }
-
-              /* Hover effect for side cards */
-              #card2:hover {
-                z-index: 3; /* Left card moves to the top */
-              }
-
-              #card3:hover {
-                z-index: 3; /* Right card moves to the top */
-              }
-
-              /* Lower the center card when a side card is hovered */
-              #card2:hover ~ #card1,
-              #card3:hover ~ #card1 {
-                z-index: 1; /* Center card moves below the hovered side card */
-              }
-
-              #card3 {
-                top: 10px;
-                left: 120px;
-                z-index: 1;
-              }
-
-              /* Hover effect only applies to the visible part of a card */
-              .card:hover {
-                z-index: 4; /* Bring the hovered card to the top */
-                transform: scale(1.1); /* Slightly enlarge the card */
-              }
-
-              /* Enable hovering for all visible cards */
-              .card {
-                pointer-events: auto;
-              }
-
-              .card-photo {
-                width: 100%;
-                height: 300px;
-              }`}
-        </style>
-
+      <style>
+        {`
+          #card1 {
+            top: 0;
+            left: 85px;
+            z-index: 2;
+          }
+          
+          #card2 {
+            top: 15px;
+            left: 35px;
+            z-index: 1;
+          }
+          
+          #card3 {
+            top: 15px;
+            left: 135px;
+            z-index: 1;
+          }
+          
+          #card2:hover,
+          #card3:hover {
+            z-index: 3;
+          }
+          
+          #card2:hover ~ #card1,
+          #card3:hover ~ #card1 {
+            z-index: 1;
+          }
+          
+          .card {
+            pointer-events: auto;
+            backface-visibility: hidden;
+          }
+        `}
+      </style>
     </div>
   );
 };
