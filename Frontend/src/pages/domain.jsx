@@ -86,7 +86,7 @@ const Team = () => {
     },
   ];
 
-
+  
   return (
     <>
       <Navbar />

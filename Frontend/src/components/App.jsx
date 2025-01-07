@@ -197,24 +197,14 @@ function HeadsCard() {
       setTimeout(() => {
         setCurrentIndex((currentIndex + 1) % domains.length);
         setIsDelayed(false);
-      }, 1000); // 1 second delay
+      }, 1000);
     }
   };
 
   return (
     <div className="h-screen bg-gradient-radial from-[#8236C8] to-[#0B0047] flex flex-col items-center">
       
-      <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-[5%] py-3 box-border bg-white/10 backdrop-blur-md">
-        <div className="text-xl font-bold text-white flex items-center">
-          {/* <img src="/logo.png" alt="Logo" className="w-[55px] h-auto" /> */}
-        </div>
-        {/* <ul className="list-none flex gap-8">
-          <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Home</li>
-          <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Domains</li>
-          <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Events</li>
-          <li className="text-white cursor-pointer hover:text-[#D1C4E9] transition-colors">Newsletters</li>
-        </ul> */}
-      </nav>
+     
 
       <div className="mt-[100px] flex items-center justify-center gap-7 text-white text-3xl">
         <p className="text-left">Know Your Domain</p>
