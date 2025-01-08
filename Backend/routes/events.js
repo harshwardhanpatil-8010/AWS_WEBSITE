@@ -18,21 +18,125 @@ router.get('/', async (req, res) => {
 
 router.post('/add', isAuthenticated, async (req, res) => {
   try {
-    const { name, date, location, description, image } = req.body;
+    const { 
+      name, 
+      date, 
+      location, 
+      description, 
+      coverImage,
+      eventImages,
+      startTime,
+      endTime,
+      status,
+      speakers,
+      topicsCovered,
+      registrationLink,
+      recordingUrl
+    } = req.body;
 
-    if (!name || !date || !location || !description) {
+    // Check mandatory fields
+    if (!name || !date || !location || !description || !coverImage) {
       return res.status(400).json({
-        message: 'All fields (name, date, location, description) are required.',
+        message: 'Name, date, location, description, and cover image are required.',
       });
     }
 
-    const newEvent = new Event({ name, date, location, description, image });
-    const savedEvent = await newEvent.save();
+    const newEvent = new Event({
+      name,
+      date,
+      location,
+      description,
+      coverImage,
+      // Optional fields - will only be set if provided in request
+      ...(eventImages && { eventImages }),
+      ...(startTime && { startTime }),
+      ...(endTime && { endTime }),
+      ...(status && { status }),
+      ...(speakers && { speakers }),
+      ...(topicsCovered && { topicsCovered }),
+      ...(registrationLink && { registrationLink }),
+      ...(recordingUrl && { recordingUrl })
+    });
 
+    const savedEvent = await newEvent.save();
     res.status(201).json(savedEvent);
   } catch (error) {
     console.error('Error adding event:', error);
     res.status(500).json({ message: 'Error adding event', error: error.message });
+  }
+});
+
+router.put('/:id/update',isAuthenticated, async (req, res) => {
+  try {
+    const { 
+      name, 
+      date, 
+      location, 
+      description, 
+      coverImage,
+      eventImages,
+      startTime,
+      endTime,
+      status,
+      speakers,
+      topicsCovered,
+      registrationLink,
+      recordingUrl
+    } = req.body;
+
+    // Check if at least one field is provided for update
+    if (Object.keys(req.body).length === 0) {
+      return res.status(400).json({
+        message: 'No update data provided'
+      });
+    }
+
+    // Create update object with only provided fields
+    const updateData = {
+      ...(name && { name }),
+      ...(date && { date }),
+      ...(location && { location }),
+      ...(description && { description }),
+      ...(coverImage && { coverImage }),
+      ...(eventImages && { eventImages }),
+      ...(startTime && { startTime }),
+      ...(endTime && { endTime }),
+      ...(status && { status }),
+      ...(speakers && { speakers }),
+      ...(topicsCovered && { topicsCovered }),
+      ...(registrationLink && { registrationLink }),
+      ...(recordingUrl && { recordingUrl })
+    };
+
+    const updatedEvent = await Event.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedEvent) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+
+    res.json(updatedEvent);
+  } catch (error) {
+    console.error('Error updating event:', error);
+    res.status(500).json({ message: 'Error updating event', error: error.message });
+  }
+});
+
+router.delete('/:id/delete',isAuthenticated, async (req, res) => {
+  try {
+    const deletedEvent = await Event.findByIdAndDelete(req.params.id);
+    
+    if (!deletedEvent) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+    
+    res.json({ message: 'Event deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting event:', error);
+    res.status(500).json({ message: 'Error deleting event', error: error.message });
   }
 });
 
