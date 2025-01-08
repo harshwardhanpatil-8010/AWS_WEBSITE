@@ -18,7 +18,9 @@ const app = express();
 app.use(helmet());
 app.use(cors(
     {
-      origin: 'http://localhost:3000'
+      origin: 'http://localhost:3000',
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true
     }
 ));
 app.use(express.json());
@@ -43,7 +45,7 @@ app.get("/", (req, res) => {
   res.send("Server is ready");
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
