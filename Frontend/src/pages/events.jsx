@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Background from '../components/background';
+
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchEvents() {
@@ -15,7 +18,7 @@ const Events = () => {
           throw new Error(`Failed to fetch events: ${response.statusText}`);
         }
 
-        const data = await response.json();  
+        const data = await response.json();
         setEvents(data);
         setLoading(false);
       } catch (error) {
@@ -38,28 +41,29 @@ const Events = () => {
 
   return (
     <>
-    <Background />
-
-    <div className="wrapper">
-      <Navbar />
-      <h2 className="text-2xl font-semibold mb-6">All Events</h2>
-      
-      {events.map((event, index) => (
-        <div key={index} className="event border border-gray-300 rounded-lg p-5 mb-6 shadow-md">
-          <h3 className="event-title text-xl font-bold mb-3">{event.name}</h3>
-          <p className="mb-3">{event.description}</p>
-          <p className="mb-3"><strong>Location:</strong> {event.location}</p>
-          <p className="mb-3"><strong>Date:</strong> {event.date}</p>
-          {event.image && (
-            <img
-              src={event.image}
-              alt={event.name} 
-              className="event-image w-full h-auto rounded-lg mt-3"
-            />
-          )}
+      <Background />
+      <div className="wrapper">
+        <Navbar />
+        <h2 className="text-2xl font-semibold mb-6">All Events</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {events.map((event) => (
+            <div
+              key={event._id}
+              className="event-card border border-gray-300 rounded-lg text-white p-5 mb-6 shadow-md cursor-pointer"
+              onClick={() => navigate(`/events/${event._id}`)}
+            >
+              {event.coverImage && (
+                <img
+                  src={event.coverImage}
+                  alt={event.name}
+                  className="event-image w-full h-40 object-cover rounded-lg mb-4"
+                />
+              )}
+              <h3 className="event-title text-lg font-bold">{event.name}</h3>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
     </>
   );
 };

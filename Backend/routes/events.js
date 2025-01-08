@@ -1,6 +1,6 @@
 import express from 'express';
 import Event from '../models/eventSchema.js';
-import { isAuthenticated } from '../middleware/verifyToken.js';
+//import { /*isAuthenticated*/ } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/add', isAuthenticated, async (req, res) => {
+router.post('/add',/*isAuthenticated,*/ async (req, res) => {
   try {
     const { 
       name, 
@@ -66,7 +66,7 @@ router.post('/add', isAuthenticated, async (req, res) => {
   }
 });
 
-router.put('/:id/update',isAuthenticated, async (req, res) => {
+router.put('/:id/update',/*isAuthenticated,*/ async (req, res) => {
   try {
     const { 
       name, 
@@ -125,7 +125,7 @@ router.put('/:id/update',isAuthenticated, async (req, res) => {
   }
 });
 
-router.delete('/:id/delete',isAuthenticated, async (req, res) => {
+router.delete('/:id/delete',/*isAuthenticated,*/ async (req, res) => {
   try {
     const deletedEvent = await Event.findByIdAndDelete(req.params.id);
     
@@ -139,5 +139,26 @@ router.delete('/:id/delete',isAuthenticated, async (req, res) => {
     res.status(500).json({ message: 'Error deleting event', error: error.message });
   }
 });
+router.get('/:id', async (req, res) => {
+  const eventId = req.params.id; 
+  console.log("Received request for event ID:", eventId); 
+
+  try {
+    const event = await Event.findById(eventId);
+
+    if (!event) {
+      console.error(`Event with ID ${eventId} not found`);
+      return res.status(404).json({ message: `Event with ID ${eventId} not found` });
+    }
+
+    console.log("Event fetched successfully:", event);
+    res.json(event);
+  } catch (error) {
+    console.error("Error fetching event:", error.message);
+    res.status(500).json({ message: "Server error fetching event", error: error.message });
+  }
+});
+;
+
 
 export default router;
