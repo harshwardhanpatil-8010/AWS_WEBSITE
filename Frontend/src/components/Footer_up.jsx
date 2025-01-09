@@ -15,7 +15,7 @@ const UpperSection = ({ toggleForm }) => {
       
       <div className="text-center">
       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white font-thin mb-4">
-      Contact With Us
+      Contact Us
         </h2>
 
         <button
