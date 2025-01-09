@@ -58,8 +58,8 @@ const CardComponent = ({ cardsData }) => {
     : cardsData[0]?.text || "No cards available";
 
   return (
-    <div className="flex flex-wrap justify-between items-start gap-[500px] mt-16">
-      <div className="relative flex gap-6">
+    <div className="flex flex-wrap justify-between sm:justify-center items-start gap-[500px] mt-16">
+      <div className="relative flex gap-6 justify-center items-center">
         {cardsData.length > 0 ? (
           cardsData.map((card) => (
             <Card
@@ -75,7 +75,7 @@ const CardComponent = ({ cardsData }) => {
       <div className="w-[600px] h-[380px] p-8 border-2 border-blue-400 rounded-2xl 
          text-white text-xl font-medium 
         flex items-center justify-center shadow-lg transform transition-all duration-500
-        hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]">
+        hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] xs:w-[450px] xs:h-[285px]">
         {currentCardText}
       </div>
 
