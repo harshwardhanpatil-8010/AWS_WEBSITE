@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 // import './App.css';
 import CardComponent from './CardComponent';
-import { RiArrowRightSLine, RiArrowRightCircleLine } from 'react-icons/ri';
+import { RiArrowRightSLine } from 'react-icons/ri';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 
 function HeadsCard() {
@@ -191,13 +192,24 @@ function HeadsCard() {
     }
   ];
 
-  const handleClick = () => {
+  const handleClick1 = () => {
     if (!isDelayed) {
       setIsDelayed(true);
       setTimeout(() => {
         setCurrentIndex((currentIndex + 1) % domains.length);
         setIsDelayed(false);
       }, 1000);
+    }
+  };
+  const handleClick2 = () => {
+    if (!isDelayed) {
+      setIsDelayed(true);
+      setTimeout(() => {
+        const newIndex = (currentIndex - 1 + domains.length) % domains.length;
+        setCurrentIndex(newIndex);
+        // setCurrentIndex((currentIndex - 1) % domains.length);
+        setIsDelayed(false);
+      }, 1000); // 1 second delay
     }
   };
 
@@ -214,9 +226,13 @@ function HeadsCard() {
         <p>{domains[currentIndex].text}</p>
       </div>
 
-      <RiArrowRightCircleLine
+      <FaArrowAltCircleRight
         className="w-[35px] h-[35px] text-white absolute right-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
-        onClick={handleClick} 
+        onClick={handleClick1} 
+      />
+      <FaArrowAltCircleLeft
+        className="w-[35px] h-[35px] text-white absolute left-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
+        onClick={handleClick2} 
       />
 
       <div className={`fade-enter ${isDelayed ? 'fade-exit-active' : 'fade-enter-active'} mt-8`}>
