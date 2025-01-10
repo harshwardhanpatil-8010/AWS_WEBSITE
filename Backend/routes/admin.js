@@ -20,7 +20,7 @@ router.post('/login', (req,res)=>{
     const token = jwt.sign(
         { id:  process.env.ADMIN_USERNAME }, 
         process.env.JWT_SECRET,
-        { expiresIn: "24h" }
+        { expiresIn: "1h" }
         );
     
     const options = {
@@ -33,6 +33,7 @@ router.post('/login', (req,res)=>{
     res.status(200).cookie("admin_token", token, options).json({
         success: true,
         message: "Admin logged in successfully",
+        auth: token,
         });
 
 })

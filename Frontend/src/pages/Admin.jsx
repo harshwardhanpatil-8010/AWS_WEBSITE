@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Container, Typography, Box, Tabs, Tab } from '@mui/material'
 import EventList from '../components/admin/EventsList.jsx'
 import EventForm from '../components/admin/EventsForm.jsx'
+import LoginPage from '../components/admin/LoginPage.jsx'
 
 export default function AdminPage() {
   const [events, setEvents] = useState([])
   const [selectedEvent, setSelectedEvent] = useState(null)
   const [activeTab, setActiveTab] = useState(0)
+  const [token, setToken] = useState(sessionStorage.getItem('auth' || ''))
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -18,8 +20,13 @@ export default function AdminPage() {
         console.log(error)
       }
     }
-    fetchEvents()
-  }, [])
+    if(!token || token === ''){
+      return console.log('Unauthorized')
+    }else{
+      fetchEvents()
+    }
+    
+  }, [token])
 
   const handleAddEvent = async (newEvent) => {
     try{
@@ -74,6 +81,29 @@ export default function AdminPage() {
     }catch(error){
       console.log(error)
     }
+  }
+
+  const handleLogin = async (username, password) => {
+    try{
+      const response = await fetch('http://localhost:8000/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+      const data = await response.json()
+      if(response.ok){
+        setToken(data.auth)
+        sessionStorage.setItem('auth', data.auth)
+      }
+    }catch(error){
+      console.log(error)
+  }
+}
+
+  if(!token || token === ''){
+    return <LoginPage onLogin={handleLogin} />
   }
 
   return (
