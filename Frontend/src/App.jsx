@@ -7,8 +7,7 @@ import Team from "./pages/domain.jsx";
 import AdminPage from "./pages/Admin.jsx";
 import EventDetails from './pages/eventdetail.jsx';
 function App() {
-  return (
-    
+  return (    
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +18,6 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Router>
-  
   );
 }
 

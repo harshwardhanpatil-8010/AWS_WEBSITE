@@ -1,6 +1,6 @@
 import express from 'express';
 import Event from '../models/eventSchema.js';
-//import { /*isAuthenticated*/ } from '../middleware/verifyToken.js';
+import { isAuthenticated } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/add',/*isAuthenticated,*/ async (req, res) => {
+router.post('/add',isAuthenticated, async (req, res) => {
   try {
     const { 
       name, 
@@ -66,7 +66,7 @@ router.post('/add',/*isAuthenticated,*/ async (req, res) => {
   }
 });
 
-router.put('/:id/update',/*isAuthenticated,*/ async (req, res) => {
+router.put('/:id/update',isAuthenticated, async (req, res) => {
   try {
     const { 
       name, 
@@ -125,7 +125,7 @@ router.put('/:id/update',/*isAuthenticated,*/ async (req, res) => {
   }
 });
 
-router.delete('/:id/delete',/*isAuthenticated,*/ async (req, res) => {
+router.delete('/:id/delete',isAuthenticated, async (req, res) => {
   try {
     const deletedEvent = await Event.findByIdAndDelete(req.params.id);
     
