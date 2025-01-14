@@ -72,8 +72,8 @@ const EventDetails = () => {
               className="event-image w-full h-60 object-cover rounded-lg mb-6"
             />
           )}
-          <p>{event.description}</p>
-          <p><strong>Location:</strong> {event.location}</p>
+          <p className='text-lg text-white'>{event.description}</p>
+          <p className='text-pink-700'><strong>Location:</strong> {event.location}</p>
           <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
           <p><strong>Start Time:</strong> {event.startTime}</p>
           <p><strong>End Time:</strong> {event.endTime}</p>
@@ -91,7 +91,7 @@ const EventDetails = () => {
                       <img
                         src={speaker.image}
                         alt={speaker.name}
-                        className="w-16 h-16 object-cover rounded-full mt-2"
+                        className="w-16 h-16 object-cover rounded-full mt-2 px-2"
                       />
                     )}
                   </li>
@@ -132,9 +132,6 @@ const EventDetails = () => {
             <p><strong>Registration Link:</strong> <a href={event.registrationLink} className="text-blue-600">{event.registrationLink}</a></p>
           )}
 
-          {event.recordingUrl && (
-            <p><strong>Recording URL:</strong> <a href={event.recordingUrl} className="text-blue-600">{event.recordingUrl}</a></p>
-          )}
         </div>
       </div>
     </>

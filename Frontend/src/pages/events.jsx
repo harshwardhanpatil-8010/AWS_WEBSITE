@@ -59,7 +59,9 @@ const Events = () => {
                   className="event-image w-full h-40 object-cover rounded-lg mb-4"
                 />
               )}
-              <h3 className="event-title text-lg font-bold">{event.name}</h3>
+              <h3 className="event-title text-lg md:text-2xl sm:text-xl xl:text-3xl font-bold">{event.name}</h3>
+              <p className='text-white'> {new Date(event.date).toLocaleDateString()}</p>
+              <p>{event.description}</p>
             </div>
           ))}
         </div>
