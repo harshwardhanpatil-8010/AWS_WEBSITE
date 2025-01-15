@@ -5,7 +5,7 @@ import Background from '../components/background';
 
 const EventDetails = () => {
   const { eventId } = useParams();
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +24,7 @@ const EventDetails = () => {
         }
 
         if (!contentType || !contentType.includes("application/json")) {
-          const text = await response.text(); 
+          const text = await response.text();
           console.error("Received non-JSON response:", text);
           throw new Error("Expected JSON, received HTML or another format.");
         }

@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import logo from "../assets/aws_navbar_img.png";
 import { IoHome } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { FaNewspaper } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FaMeetup } from "react-icons/fa";
-
+import logo from "../assets/b-w.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
+  // Close the menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -25,19 +25,27 @@ const Navbar = () => {
 
   return (
     <nav
-      ref={menuRef}
-      className="relative mt-2 sm:mt-4 bg-white/15 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[6.5px] rounded-lg border border-white/20 p-2 sm:p-4 z-50"
-    >
-      <div className="container mx-auto flex justify-between items-center font-bold">
-        <div className="flex-shrink-0">
-          <img src={logo} alt="App Logo" className="size-10" />
-        </div>
+  ref={menuRef}
+  className="relative mt-4 bg-white shadow-lg rounded-full p-4 mx-auto max-w-6xl"
+>
+
+      <div className="flex justify-between items-center font-bold px-4">
+        {/* Logo Section */}
+        <div className="flex items-center space-x-2 text-black">
+  <img
+    src={logo}
+    alt="Logo"
+    className="w-10 h-10 rounded-full filter brightness-0 select-none"
+  />
+</div>
+
+
         {/* Menu */}
         <ul className="hidden md:flex space-x-10">
           <li>
             <a
               href="/"
-              className="text-white hover:underline flex items-center space-x-2 cursor-pointer"
+              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
             >
               <IoHome />
               <span>HOME</span>
@@ -46,7 +54,7 @@ const Navbar = () => {
           <li>
             <a
               href="./domain"
-              className="text-white hover:underline flex items-center space-x-2 cursor-pointer"
+              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
             >
               <RiTeamFill />
               <span>DOMAINS</span>
@@ -55,7 +63,7 @@ const Navbar = () => {
           <li>
             <a
               href="./events"
-              className="text-white hover:underline flex items-center space-x-2 cursor-pointer"
+              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
             >
               <IoCalendar />
               <span>EVENTS</span>
@@ -64,7 +72,7 @@ const Navbar = () => {
           <li>
             <a
               href="./news"
-              className="text-white hover:underline flex items-center space-x-2 cursor-pointer"
+              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
             >
               <FaNewspaper />
               <span>NEWSLETTER</span>
@@ -73,7 +81,7 @@ const Navbar = () => {
           <li>
             <a
               href="./"
-              className="text-white hover:underline flex items-center space-x-2 cursor-pointer"
+              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
             >
               <FaMeetup />
               <span>JOIN US</span>
@@ -83,19 +91,21 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white focus:outline-none text-2xl cursor-pointer"
+          className="md:hidden text-black focus:outline-none text-2xl fixed z-40 right-5"
           aria-label="Toggle navigation"
         >
           {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
       </div>
+
+      {/* Mobile */}
       {menuOpen && (
-        <div className="absolute md:hidden z-50 left-0 right-0 mt-2 mx-2 bg-black/90 backdrop-blur-md rounded-lg border border-white/20 shadow-lg">
-          <ul className="space-y-6 py-6 text-center font-bold px-4">
+<div className="absolute md:hidden z-50 left-0 right-0 rounded-full border">
+          <ul className="space-y-4 mt-4 text-center font-bold p-4">
             <li>
               <a
                 href="./"
-                className="text-white hover:underline flex items-center justify-center space-x-2 cursor-pointer"
+                className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <IoHome />
@@ -104,8 +114,8 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="./domain"
-                className="text-white hover:underline flex items-center justify-center space-x-2 cursor-pointer"
+                href="./domains"
+                className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <RiTeamFill />
@@ -115,7 +125,7 @@ const Navbar = () => {
             <li>
               <a
                 href="./events"
-                className="text-white hover:underline flex items-center justify-center space-x-2 cursor-pointer"
+                className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <IoCalendar />
@@ -125,7 +135,7 @@ const Navbar = () => {
             <li>
               <a
                 href="./news"
-                className="text-white hover:underline flex items-center justify-center space-x-2 cursor-pointer"
+                className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <FaNewspaper />
@@ -135,7 +145,7 @@ const Navbar = () => {
             <li>
               <a
                 href="./domains"
-                className="text-white hover:underline flex items-center justify-center space-x-2 cursor-pointer"
+                className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <FaMeetup />
