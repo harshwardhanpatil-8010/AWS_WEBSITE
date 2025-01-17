@@ -36,7 +36,9 @@ const Newsletters = () => {
     <Background />
 
     <div className="wrapper">
-      <Navbar />
+    <div className="bg-gradient-to-br from-inherit to-black sticky top-0 z-50 backdrop-blur-sm mt-4">
+          <Navbar />
+        </div>
       <h2 className="text-2xl font-semibold mb-4">All Newsletters</h2>
 
       

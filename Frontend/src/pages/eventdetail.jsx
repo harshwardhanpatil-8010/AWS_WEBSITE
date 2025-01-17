@@ -13,7 +13,6 @@ const EventDetails = () => {
   useEffect(() => {
     async function fetchEvent() {
       console.log("Fetching event with ID:", eventId);
-
       try {
         const response = await fetch(`http://localhost:8000/events/${eventId}`);
         const contentType = response.headers.get("content-type");
@@ -74,7 +73,7 @@ const EventDetails = () => {
           )}
           <p className='text-lg text-white'>{event.description}</p>
           <p className='text-pink-700'><strong>Location:</strong> {event.location}</p>
-          <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
+          <p><strong>Date:</strong>{new Date(event.date).toLocaleDateString()}</p>
           <p><strong>Start Time:</strong> {event.startTime}</p>
           <p><strong>End Time:</strong> {event.endTime}</p>
           <p><strong>Status:</strong> {event.status}</p>

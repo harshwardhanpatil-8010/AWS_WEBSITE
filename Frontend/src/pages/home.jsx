@@ -9,12 +9,12 @@ const Home = () => {
   return (
     <>
       <Background />
-      <div className="min-h-screen wrapper relative">
+     
         <div className="bg-gradient-to-br from-inherit to-black sticky top-0 z-50 backdrop-blur-sm">
           <Navbar />
         </div>
 
-        <main className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 ">
           <Landing />
           <br />
           
@@ -45,7 +45,7 @@ const Home = () => {
         <div className="mt-auto w-full">
           <Footer />
         </div>
-      </div>
+      
     </>
   );
 };

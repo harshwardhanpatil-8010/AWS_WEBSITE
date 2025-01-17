@@ -43,7 +43,10 @@ const Events = () => {
     <>
       <Background />
       <div className="wrapper">
-        <Navbar />
+      <div className="bg-gradient-to-br from-inherit to-black sticky top-0 z-50 backdrop-blur-sm mt-4">
+          <Navbar />
+        </div>
+        
         <h2 className="text-2xl font-semibold mb-6">All Events</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (
