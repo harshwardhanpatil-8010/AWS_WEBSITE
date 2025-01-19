@@ -33,7 +33,9 @@ const Card = ({ data }) => {
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-2 sm:mb-3">
             {data.name}
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-3 sm:mb-4">{data.role}</p>
+          <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-3 sm:mb-4">
+            {data.role}
+          </p>
         </div>
       </div>
     </div>
@@ -86,49 +88,53 @@ const Team = () => {
     },
   ];
 
-  
   return (
     <>
-   
-   <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky">
-          <Navbar />
-        </div>
-      <Background />
-      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse ">
-        Know Your Domain
-      </h1>
-      
-      <div className="container mx-auto px-4">
-        <div id="mentors" className="flex flex-col gap-8 sm:gap-12 md:gap-16">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center">Mentors</h2>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-            {data.slice(0, 2).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
+      <div className="overflow-x-hidden min-h-screen flex flex-col w-screen">
+        {/* <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky"> */}
+        <Navbar />
+        <Background />
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse ">
+          Know Your Domain
+        </h1>
+
+        <div className="container mx-auto px-4">
+          <div id="mentors" className="flex flex-col gap-8 sm:gap-12 md:gap-16">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+              Mentors
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
+              {data.slice(0, 2).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
+          </div>
+
+          <div id="admin" className="mt-8 sm:mt-12">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8">
+              Admin Panel
+            </h2>
+            <div className="flex justify-center">
+              {data.slice(2, 3).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
+          </div>
+
+          <div id="team" className="mt-8 sm:mt-12 mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+              {data.slice(3, 7).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
           </div>
         </div>
 
-        <div id="admin" className="mt-8 sm:mt-12">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8">Admin Panel</h2>
-          <div className="flex justify-center">
-            {data.slice(2, 3).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
-          </div>
-        </div>
-
-        <div id="team" className="mt-8 sm:mt-12 mb-8 sm:mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
-            {data.slice(3, 7).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
-          </div>
-        </div>
+        <App />
+        {/* <div className="mt-112"> */}
+          <LowerSection />
+        {/* </div> */}
       </div>
-
-      <App />
-      <LowerSection />
-    
     </>
   );
 };

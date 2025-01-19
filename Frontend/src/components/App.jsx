@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // import './App.css';
-import CardComponent from './CardComponent';
-import { RiArrowRightSLine } from 'react-icons/ri';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-
+import CardComponent from "./CardComponent";
+import { RiArrowRightSLine } from "react-icons/ri";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,7 +19,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:example1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Technical Team member details"
+          text: "Technical Team member details",
         },
         {
           id: "card2",
@@ -28,9 +27,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:example2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Technical info"
-        }
-      ]
+          text: "More Technical info",
+        },
+      ],
     },
     {
       text: "Event Operations and Management",
@@ -41,7 +40,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Event Operations member details"
+          text: "Event Operations member details",
         },
         {
           id: "card2",
@@ -49,7 +48,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Event Operations info"
+          text: "More Event Operations info",
         },
         {
           id: "card3",
@@ -57,9 +56,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Event Operations3 info"
-        }
-      ]
+          text: "More Event Operations3 info",
+        },
+      ],
     },
     {
       text: "Graphic Arts and Design",
@@ -70,9 +69,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Graphic Arts and Design member details"
-        }
-      ]
+          text: "Graphic Arts and Design member details",
+        },
+      ],
     },
     {
       text: "Social Media and Promotions",
@@ -83,7 +82,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Social Media and Promotions member details"
+          text: "Social Media and Promotions member details",
         },
         {
           id: "card2",
@@ -91,7 +90,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Social Media and Promotions info"
+          text: "More Social Media and Promotions info",
         },
         {
           id: "card3",
@@ -99,9 +98,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Social Media and Promotions3 info"
-        }
-      ]
+          text: "More Social Media and Promotions3 info",
+        },
+      ],
     },
     {
       text: "Editorial Team",
@@ -112,7 +111,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Editorial Team member details"
+          text: "Editorial Team member details",
         },
         {
           id: "card2",
@@ -120,7 +119,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Editorial Team info"
+          text: "More Editorial Team info",
         },
         {
           id: "card3",
@@ -128,9 +127,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Editorial Team3 info"
-        }
-      ]
+          text: "More Editorial Team3 info",
+        },
+      ],
     },
     {
       text: "Finance Team Team",
@@ -141,7 +140,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Finance Team Team member details"
+          text: "Finance Team Team member details",
         },
         {
           id: "card2",
@@ -149,7 +148,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Finance Team Team info"
+          text: "More Finance Team Team info",
         },
         {
           id: "card3",
@@ -157,9 +156,9 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Finance Team Team3 info"
-        }
-      ]
+          text: "More Finance Team Team3 info",
+        },
+      ],
     },
     {
       text: "Sponsorship Team Team",
@@ -170,7 +169,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Sponsorship Team Team member details"
+          text: "Sponsorship Team Team member details",
         },
         {
           id: "card2",
@@ -178,7 +177,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Sponsorship Team Team info"
+          text: "More Sponsorship Team Team info",
         },
         {
           id: "card3",
@@ -186,10 +185,10 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Sponsorship Team Team3 info"
-        }
-      ]
-    }
+          text: "More Sponsorship Team Team3 info",
+        },
+      ],
+    },
   ];
 
   const handleClick1 = () => {
@@ -215,27 +214,28 @@ function HeadsCard() {
 
   return (
     <div className="h-screen bg-gradient-radial from-[#8236C8] to-[#0B0047] flex flex-col items-center">
-      
-     
-
-      <div className="mt-[100px] flex items-center justify-center gap-7 text-white text-3xl">
+      <div className="mt-[100px] max-[640px]:text-sm max-[320px]:text-xs sm:mt-[50px] flex items-center justify-center gap-7 text-white text-3xl">
         <p className="text-left">Know Your Domain</p>
 
-          <RiArrowRightSLine />
-          
-        <p>{domains[currentIndex].text}</p>
+        <RiArrowRightSLine />
+
+        <p className="">{domains[currentIndex].text}</p>
       </div>
 
       <FaArrowAltCircleRight
-        className="w-[35px] h-[35px] text-white absolute right-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
-        onClick={handleClick1} 
+        className="w-[35px] h-[35px] text-white absolute right-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer"
+        onClick={handleClick1}
       />
       <FaArrowAltCircleLeft
-        className="w-[35px] h-[35px] text-white absolute left-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer" 
-        onClick={handleClick2} 
+        className="w-[35px] h-[35px] text-white absolute left-5 mt-[379px] transform -translate-y-1/2 hover:scale-110 transition-transform cursor-pointer"
+        onClick={handleClick2}
       />
 
-      <div className={`fade-enter ${isDelayed ? 'fade-exit-active' : 'fade-enter-active'} mt-8`}>
+      <div
+        className={`fade-enter ${
+          isDelayed ? "fade-exit-active" : "fade-enter-active"
+        } mt-8`}
+      >
         <CardComponent cardsData={domains[currentIndex].cards} />
       </div>
 
@@ -255,8 +255,38 @@ function HeadsCard() {
             opacity: 0;
             transition: opacity 300ms;
           }
-        `}
+          `}
       </style>
+          {/* /* Mobile responsiveness 
+        @media (max-width: 640px) {
+          .text-3xl {
+            font-size: 1.5rem; /* Adjust font size 
+          }
+
+          .text-2xl {
+            font-size: 1.25rem; /* Adjust font size 
+          }
+
+          .mt-[379px] {
+            margin-top: 150px; /* Adjust positioning of arrows 
+          }
+
+          .sm\\:mt-[50px] {
+            margin-top: 50px; /* Reduce the margin for mobile view 
+          }
+
+          .w-[35px] {
+            width: 28px; /* Make arrows smaller 
+          }
+
+          .h-[35px] {
+            height: 28px; /* Make arrows smaller 
+          }
+
+          .mt-8 {
+            margin-top: 1rem; /* Reduce margin for small screens 
+          }
+        } */}
     </div>
   );
 }
