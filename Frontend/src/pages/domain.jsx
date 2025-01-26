@@ -86,15 +86,11 @@ const Team = () => {
     },
   ];
 
-  
   return (
-    <>
-   
-   <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky">
-          <Navbar />
-        </div>
+    <div className="overflow-x-hidden w-screen">
+      <Navbar />
       <Background />
-      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse ">
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse">
         Know Your Domain
       </h1>
       
@@ -128,8 +124,7 @@ const Team = () => {
 
       <App />
       <LowerSection />
-    
-    </>
+    </div>
   );
 };
 
