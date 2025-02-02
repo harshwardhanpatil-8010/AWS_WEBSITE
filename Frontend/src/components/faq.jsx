@@ -25,9 +25,9 @@ const FAQPage = () => {
   return (
     <div className="relative mt-4 p-4 sm:p-6">
     
-      <main className="container mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-center">
+      <main className=" mx-auto px-4 py-10 flex md:flex-row items-center justify-center">
 
-        <div className="md:w-2/3 space-y-4 flex flex-col items-center justify-center text-center">
+        <div className="md:w-2/3 space-y-4  items-center justify-center text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">
             Frequently Asked Questions
           </h2>

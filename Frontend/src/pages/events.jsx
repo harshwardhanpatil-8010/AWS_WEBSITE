@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Background from '../components/background';
+import LowerSection from '../components/Footer_low';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -43,10 +44,11 @@ const Events = () => {
     <>
       <Background />
       <div className="wrapper">
+        
       <div className="bg-gradient-to-br from-inherit to-black sticky top-0 z-50 backdrop-blur-sm mt-4">
           <Navbar />
         </div>
-        
+        <main className='w-full mx-auto px-4 sm:px-6 lg:px-8 pt-20'>
         <h2 className="text-2xl font-semibold mb-6">All Events</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (
@@ -67,8 +69,12 @@ const Events = () => {
               <p>{event.description}</p>
             </div>
           ))}
+              
         </div>
+        </main>
+        <LowerSection />
       </div>
+          
     </>
   );
 };

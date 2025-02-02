@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Background from "../components/background";
-import App from "../components/App";
+import App from "../components/heads-slider";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import LowerSection from "../components/Footer_low";
@@ -42,93 +42,56 @@ const Card = ({ data }) => {
 
 const Team = () => {
   const data = [
-    {
-      name: "",
-      role: "",
-      img: "https://plus.unsplash.com/premium_photo-1721736018999-f6285dc514c3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "",
-      role: "",
-      img: "images/neon green.png",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "Tanish Seth",
-      role: "President",
-      img: "images/blue.png",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "Vaidant Jain",
-      role: "",
-      img: "images/red.png",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "Mitali Bangar",
-      role: "",
-      img: "",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "Shravya Dsouza",
-      role: "",
-      img: "images/blue.png",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
-    {
-      name: "Sneh Shah",
-      role: "",
-      img: "images/red.png",
-      linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/",
-    },
+    { name: "", role: "", img: "images/neon green.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "", role: "", img: "images/neon green.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "Tanish Seth", role: "President", img: "images/blue.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "Vaidant Jain", role: "", img: "images/red.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "Mitali Bangar", role: "", img: "", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "Shravya Dsouza", role: "", img: "images/blue.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
+    { name: "Sneh Shah", role: "", img: "images/red.png", linkedin: "https://www.linkedin.com/in/harshwardhan-patil-a1bb11289/" },
   ];
 
-  
   return (
     <>
-   
-   <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky">
-          <Navbar />
-        </div>
       <Background />
-      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse ">
-        Know Your Domain
-      </h1>
       
-      <div className="container mx-auto px-4">
-        <div id="mentors" className="flex flex-col gap-8 sm:gap-12 md:gap-16">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center">Mentors</h2>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-            {data.slice(0, 2).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
+      <Navbar className="flex justify-center"/>
+      <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse">
+          Know Your Domain
+        </h1>
+        
+        <div className="container mx-auto px-4">
+          <div id="mentors" className="flex flex-col gap-8 sm:gap-12 md:gap-16">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center">Mentors</h2>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
+              {data.slice(0, 2).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
+          </div>
+          
+          <div id="admin" className="mt-8 sm:mt-12">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8">Admin Panel</h2>
+            <div className="flex justify-center">
+              {data.slice(2, 3).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
+          </div>
+          
+          <div id="team" className="mt-8 sm:mt-12 mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+              {data.slice(3, 7).map((d, index) => (
+                <Card key={index} data={d} />
+              ))}
+            </div>
           </div>
         </div>
 
-        <div id="admin" className="mt-8 sm:mt-12">
-          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8">Admin Panel</h2>
-          <div className="flex justify-center">
-            {data.slice(2, 3).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
-          </div>
-        </div>
-
-        <div id="team" className="mt-8 sm:mt-12 mb-8 sm:mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 justify-items-center">
-            {data.slice(3, 7).map((d, index) => (
-              <Card key={index} data={d} />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <App />
-      <LowerSection />
-    
+        <App />
+        <LowerSection />
+      </main>
     </>
   );
 };

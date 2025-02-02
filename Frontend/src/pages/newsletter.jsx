@@ -39,6 +39,7 @@ const Newsletters = () => {
     <div className="bg-gradient-to-br from-inherit to-black sticky top-0 z-50 backdrop-blur-sm mt-4">
           <Navbar />
         </div>
+        <main className='w-full mx-auto px-4 sm:px-6 lg:px-8 pt-20'>
       <h2 className="text-2xl font-semibold mb-4">All Newsletters</h2>
 
       
@@ -63,6 +64,7 @@ const Newsletters = () => {
           </div>
         ))}
       </div>
+      </main>
     </div>
     </>
   );
