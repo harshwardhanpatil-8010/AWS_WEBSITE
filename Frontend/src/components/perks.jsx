@@ -4,7 +4,7 @@ import React from 'react';
 const perksData = [
   {
     image: "https://brandeps.com/logo-download/U/Udemy-logo-vector-02.svg", 
-    perk: "Udemy Access"
+    perk: "Udemy License"
   },
   {
     image: "https://res.cloudinary.com/dcm2r44f3/image/upload/v1738424018/resume-review_hgh523.png", 

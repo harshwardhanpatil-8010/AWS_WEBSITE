@@ -93,7 +93,7 @@ const Team = () => {
     <>
      <Background />
       <div className="overflow-x-hidden min-h-screen flex flex-col w-screen">
-        {/* <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky"> */}
+      
         <Navbar />
         <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12">
        

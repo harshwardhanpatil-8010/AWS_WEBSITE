@@ -47,11 +47,12 @@ const Navbar = () => {
 
   return (
     <nav
-      ref={menuRef}
-      className={`fixed top-6 left-1/2 transform -translate-x-1/2 bg-[#ffffff] rounded-full px-8 py-4 w-[90%] max-w-[1200px] transition-transform duration-300 shadow-lg z-50 ${
-        showNavbar ? "translate-y-0" : "-translate-y-[120%]"
-      } flex justify-center`}
-    >
+    ref={menuRef}
+    className={`fixed left-1/2 transform -translate-x-1/2 bg-[#ffffff] rounded-full px-8 py-4 w-[90%] max-w-[1200px] transition-all duration-300 shadow-lg z-50 ${
+      showNavbar ? "top-6 opacity-100" : "-top-20 opacity-0"
+    } flex justify-center`}
+  >
+  
       <div className="flex justify-between items-center font-bold w-full">
         {/* Logo Section */}
         <div className="flex items-center space-x-1">
