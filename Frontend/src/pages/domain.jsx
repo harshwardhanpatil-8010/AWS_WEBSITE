@@ -91,10 +91,12 @@ const Team = () => {
   return (
 
     <>
+     <Background />
       <div className="overflow-x-hidden min-h-screen flex flex-col w-screen">
         {/* <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky"> */}
         <Navbar />
-        <Background />
+        <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+       
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse ">
           Know Your Domain
         </h1>
@@ -136,6 +138,7 @@ const Team = () => {
         {/* <div className="mt-112"> */}
           <LowerSection />
         {/* </div> */}
+        </main>
       </div>
     </>
 

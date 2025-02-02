@@ -1,10 +1,7 @@
-
 import React, { useState } from "react";
-import React, { useState } from 'react';
-import CardComponent from './CardComponent';
-import { RiArrowRightSLine } from 'react-icons/ri';
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-
+import CardComponent from "./CardComponent";
+import { RiArrowRightSLine } from "react-icons/ri";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -133,7 +130,7 @@ function HeadsCard() {
       ],
     },
     {
-      text: "Finance Team Team",
+      text: "Finance Team",
       cards: [
         {
           id: "card1",
@@ -141,7 +138,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Finance Team Team member details",
+          text: "Finance Team member details",
         },
         {
           id: "card2",
@@ -149,7 +146,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Finance Team Team info",
+          text: "More Finance Team info",
         },
         {
           id: "card3",
@@ -157,12 +154,12 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Finance Team Team3 info",
+          text: "More Finance Team3 info",
         },
       ],
     },
     {
-      text: "Sponsorship Team Team",
+      text: "Sponsorship Team",
       cards: [
         {
           id: "card1",
@@ -170,7 +167,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event1@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "Sponsorship Team Team member details",
+          text: "Sponsorship Team member details",
         },
         {
           id: "card2",
@@ -178,7 +175,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Sponsorship Team Team info",
+          text: "More Sponsorship Team info",
         },
         {
           id: "card3",
@@ -186,7 +183,7 @@ function HeadsCard() {
           githubLink: "https://github.com",
           emailLink: "mailto:event2@gmail.com",
           linkedinLink: "https://linkedin.com",
-          text: "More Sponsorship Team Team3 info",
+          text: "More Sponsorship Team3 info",
         },
       ],
     },
@@ -238,13 +235,10 @@ function HeadsCard() {
         } mt-8`}
       >
         <CardComponent cardsData={domains[currentIndex].cards} />
-
       </div>
-    </div>
 
       <style>
         {`
-
           .fade-enter {
             opacity: 0;
             transform: translateY(-10px);
@@ -258,39 +252,38 @@ function HeadsCard() {
             opacity: 0;
             transition: opacity 300ms;
           }
-          `}
 
+          @media (max-width: 640px) {
+            .text-3xl {
+              font-size: 1.5rem;
+            }
+
+            .text-2xl {
+              font-size: 1.25rem;
+            }
+
+            .mt-[379px] {
+              margin-top: 150px;
+            }
+
+            .sm\:mt-[50px] {
+              margin-top: 50px;
+            }
+
+            .w-[35px] {
+              width: 28px;
+            }
+
+            .h-[35px] {
+              height: 28px;
+            }
+
+            .mt-8 {
+              margin-top: 1rem;
+            }
+          }
+        `}
       </style>
-          {/* /* Mobile responsiveness 
-        @media (max-width: 640px) {
-          .text-3xl {
-            font-size: 1.5rem; /* Adjust font size 
-          }
-
-          .text-2xl {
-            font-size: 1.25rem; /* Adjust font size 
-          }
-
-          .mt-[379px] {
-            margin-top: 150px; /* Adjust positioning of arrows 
-          }
-
-          .sm\\:mt-[50px] {
-            margin-top: 50px; /* Reduce the margin for mobile view 
-          }
-
-          .w-[35px] {
-            width: 28px; /* Make arrows smaller 
-          }
-
-          .h-[35px] {
-            height: 28px; /* Make arrows smaller 
-          }
-
-          .mt-8 {
-            margin-top: 1rem; /* Reduce margin for small screens 
-          }
-        } */}
     </div>
   );
 }

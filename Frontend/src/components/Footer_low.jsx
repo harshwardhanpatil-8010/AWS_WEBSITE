@@ -1,36 +1,51 @@
 import React from "react";
-import { FaInstagram, FaLinkedin, FaMeetup } from "react-icons/fa";
+
 
 const LowerSection = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="px-6 mb-0 py-8 bg-black/30bg-white/15 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[6.5px] border-white/20 flex flex-col items-center">
+    <div className="px-6 py-8 bg-[] flex flex-col items-center border-gray-950">
       
       <div className="flex space-x-6 mb-4">
         <a
           href="https://www.instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-purple-400 text-white text-2xl transition-all"
+          className="hover:text-purple-400 text-white text-2xl transition-all cursor-pointer"
         >
-          <FaInstagram />
+         <img
+             src="  https://images.seeklogo.com/logo-png/43/2/instagram-new-2022-logo-png_seeklogo-438252.png?v=1957907345596552104"
+             alt="Instagram"
+             className="w-12 h-12 object-contain transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
+             />
+       
         </a>
         <a
           href="https://www.linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-500 text-white text-2xl transition-all"
+          className="hover:text-blue-500 text-white text-2xl transition-all cursor-pointer"
         >
-          <FaLinkedin />
+          <img
+             src="  https://images.seeklogo.com/logo-png/39/2/linkedin-new-2020-logo-png_seeklogo-393964.png?v=1957907299674022256"
+             alt="Linkedin"
+             className="w-12 h-12 object-contain transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
+             />
+       
         </a>
         <a
-          href="https://www.meetup.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-pink-500 text-white text-2xl transition-all"
-        >
-          <FaMeetup />
-        </a>
+            href="https://www.meetup.com"
+             target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 text-white text-2xl transition-all cursor-pointer"
+            >
+                   <img
+             src="https://images.seeklogo.com/logo-png/43/2/meetup-logo-png_seeklogo-432672.png?v=1957916984841910632"
+             alt="meetup"
+             className="w-12 h-12 object-contain transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
+             />
+            </a>
+
       </div>
 
       

@@ -1,17 +1,38 @@
 import React, { useState, useEffect, useRef } from "react";
 import { IoHome } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
-import { FaNewspaper } from "react-icons/fa";
+import { FaNewspaper, FaMeetup } from "react-icons/fa";
 import { IoCalendar } from "react-icons/io5";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { FaMeetup } from "react-icons/fa";
-import logo from "../assets/b-w.png";
-
+import logo from "../assets/logo.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
   const menuRef = useRef(null);
 
-  // Close the menu when clicking outside
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current) {
+       
+        setShowNavbar(false);
+      } else {
+        
+        setShowNavbar(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -26,29 +47,23 @@ const Navbar = () => {
 
   return (
     <nav
-  ref={menuRef}
-  className="sticky mt-4 bg-white shadow-lg rounded-full p-4 mx-auto max-w-6xl"
->
-
-      <div className="flex justify-between items-center font-bold px-4 sticky">
+      ref={menuRef}
+      className={`fixed top-6 left-1/2 transform -translate-x-1/2 bg-[#ffffff] rounded-full px-8 py-4 w-[90%] max-w-[1200px] transition-transform duration-300 shadow-lg z-50 ${
+        showNavbar ? "translate-y-0" : "-translate-y-[120%]"
+      } flex justify-center`}
+    >
+      <div className="flex justify-between items-center font-bold w-full">
         {/* Logo Section */}
-        <div className="flex items-center space-x-2">
-          
-          <img
-            src={logo}
-           
-            className="w-10 h-10 rounded-full text-black"
-          />
-       
-          
+        <div className="flex items-center space-x-1">
+          <img src={logo} alt="Logo" className="w-12 h-12 rounded-full text-bold" />
         </div>
 
-        {/* Menu */}
-        <ul className="hidden md:flex space-x-10 ">
+        {/* Menu for larger screens */}
+        <ul className="hidden md:flex space-x-4">
           <li>
             <a
               href="/"
-              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
+              className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <IoHome />
               <span>HOME</span>
@@ -57,7 +72,7 @@ const Navbar = () => {
           <li>
             <a
               href="./domain"
-              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
+              className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <RiTeamFill />
               <span>DOMAINS</span>
@@ -66,7 +81,7 @@ const Navbar = () => {
           <li>
             <a
               href="./events"
-              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
+              className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <IoCalendar />
               <span>EVENTS</span>
@@ -75,7 +90,7 @@ const Navbar = () => {
           <li>
             <a
               href="./news"
-              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
+              className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <FaNewspaper />
               <span>NEWSLETTER</span>
@@ -84,7 +99,7 @@ const Navbar = () => {
           <li>
             <a
               href="./"
-              className="text-black relative hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center space-x-2"
+              className="text-white hover:font-bold bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <FaMeetup />
               <span>JOIN US</span>
@@ -92,22 +107,22 @@ const Navbar = () => {
           </li>
         </ul>
 
+        {/* Hamburger Icon for mobile screens */}
         <button
+          className="md:hidden text-black text-3xl"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-black focus:outline-none text-2xl fixed z-40 right-5"
-          aria-label="Toggle navigation"
         >
           {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
       </div>
 
-      {/* Mobile */}
+      {/* Mobile Menu */}
       {menuOpen && (
-<div className="absolute md:hidden z-50 left-0 right-0 bg-white/90 rounded-full border border-black/20 shadow-lg">
+        <div className="absolute md:hidden z-50 left-0 right-0 bg-white/90 rounded-lg shadow-lg">
           <ul className="space-y-4 mt-4 text-center font-bold p-4">
             <li>
               <a
-                href="./"
+                href="/"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
@@ -117,7 +132,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="./domains"
+                href="./domain"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
@@ -147,7 +162,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="./domains"
+                href="./"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >
@@ -162,4 +177,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
