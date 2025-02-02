@@ -89,6 +89,7 @@ const Team = () => {
   ];
 
   return (
+
     <>
       <div className="overflow-x-hidden min-h-screen flex flex-col w-screen">
         {/* <div className="bg-gradient-to-br from-inherit to-black top-0 z-50 backdrop-blur-sm sticky"> */}
@@ -108,6 +109,7 @@ const Team = () => {
                 <Card key={index} data={d} />
               ))}
             </div>
+
           </div>
 
           <div id="admin" className="mt-8 sm:mt-12">
@@ -136,6 +138,7 @@ const Team = () => {
         {/* </div> */}
       </div>
     </>
+
   );
 };
 

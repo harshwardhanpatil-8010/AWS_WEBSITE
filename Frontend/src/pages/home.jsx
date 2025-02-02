@@ -20,7 +20,7 @@ const Home = () => {
           
           <div className="text-white max-w-4xl mx-auto space-y-12 py-16">
             <div className="bg-black/30 backdrop-blur-sm rounded-xl p-8 hover:bg-black/40 transition-all duration-300">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-6">
+              <h2 className="text-3xl font-bold bg-gradient-to-r  from-blue-500 to-purple-500 bg-clip-text text-transparent mb-6">
                 About Us
               </h2>
               <p className="text-lg leading-relaxed text-gray-200">

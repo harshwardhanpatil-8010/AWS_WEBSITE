@@ -1,9 +1,10 @@
-import React, { useState } from "react";
 
-// import './App.css';
-import CardComponent from "./CardComponent";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import React, { useState } from "react";
+import React, { useState } from 'react';
+import CardComponent from './CardComponent';
+import { RiArrowRightSLine } from 'react-icons/ri';
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+
 
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -200,15 +201,15 @@ function HeadsCard() {
       }, 1000);
     }
   };
+
   const handleClick2 = () => {
     if (!isDelayed) {
       setIsDelayed(true);
       setTimeout(() => {
         const newIndex = (currentIndex - 1 + domains.length) % domains.length;
         setCurrentIndex(newIndex);
-        // setCurrentIndex((currentIndex - 1) % domains.length);
         setIsDelayed(false);
-      }, 1000); // 1 second delay
+      }, 1000);
     }
   };
 
@@ -237,11 +238,13 @@ function HeadsCard() {
         } mt-8`}
       >
         <CardComponent cardsData={domains[currentIndex].cards} />
-      </div>
 
-      {/* Fade In/Out Transitions */}
+      </div>
+    </div>
+
       <style>
         {`
+
           .fade-enter {
             opacity: 0;
             transform: translateY(-10px);
@@ -256,6 +259,7 @@ function HeadsCard() {
             transition: opacity 300ms;
           }
           `}
+
       </style>
           {/* /* Mobile responsiveness 
         @media (max-width: 640px) {
