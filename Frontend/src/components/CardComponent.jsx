@@ -59,7 +59,7 @@ const CardComponent = ({ cardsData }) => {
   return (
     <div className="container mx-auto px-4">
       <div className="w-full flex flex-col xl:flex-row xl:justify-center items-center gap-12 xl:gap-4">
-        <div className="relative w-full max-w-[600px] md:max-w-[700px] h-[400px] flex justify-center items-center">
+        <div className="relative w-full max-w-[600px] md:max-w-[700px] h-[400px] flex justify-center items-center"> 
           {cardsData.length > 0 ? (
             cardsData.map((card) => (
               <Card
