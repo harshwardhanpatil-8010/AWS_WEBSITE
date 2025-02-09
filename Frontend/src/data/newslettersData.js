@@ -1,7 +1,6 @@
 const newslettersData = {
     "big-data-analytics": {
       title: "Big Data And Analytics",
-      date: "September 16, 2024",
       image: "https://effvision.com/wp-content/uploads/2024/06/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1.jpg",
       sections: [
         {
