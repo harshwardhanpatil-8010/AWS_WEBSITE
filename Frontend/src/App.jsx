@@ -6,6 +6,8 @@ import Events from "./pages/events.jsx";
 import Team from "./pages/domain.jsx";
 import AdminPage from "./pages/Admin.jsx";
 import EventDetails from './pages/eventdetail.jsx';
+import NewsletterPage from "./components/Newsletter_page.jsx";
+
 function App() {
   return (    
       <Router>
@@ -16,6 +18,7 @@ function App() {
           <Route path="/events/:eventId" element={<EventDetails />} />
           <Route path="/domain" element={<Team />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/newsletter/:slug" element={<NewsletterPage/>} />
         </Routes>
       </Router>
   );

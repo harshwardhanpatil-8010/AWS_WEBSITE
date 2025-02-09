@@ -90,7 +90,7 @@ const Team = () => {
     <div className="overflow-x-hidden w-screen">
       <Navbar />
       <Background />
-      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 animate-pulse pt-12">
+      <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-12 sm:mt-16 md:mt-24 mb-8 sm:mb-12 md:mb-16 px-4 pt-12">
         Know Your Domain
       </h1>
       
