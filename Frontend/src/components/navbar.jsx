@@ -76,7 +76,7 @@ const Navbar = () => {
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <RiTeamFill />
-              <span>DOMAINS</span>
+              <span>ABOUT US</span>
             </a>
           </li>
           <li>
@@ -138,7 +138,7 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 <RiTeamFill />
-                <span>DOMAINS</span>
+                <span>ABOUT US</span>
               </a>
             </li>
             <li>
