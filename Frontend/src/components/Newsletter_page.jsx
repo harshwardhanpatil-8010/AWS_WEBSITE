@@ -6,47 +6,60 @@ const NewsletterPage = () => {
   const newsletter = newslettersData[slug];
 
   if (!newsletter) {
-    return <h1 className="text-white text-center p-20">Newsletter Not Found</h1>;
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-zinc-800 flex items-center justify-center">
+        <h1 className="text-white text-3xl font-bold p-8 bg-red-500/10 rounded-lg border border-red-500/20">
+          Newsletter Not Found
+        </h1>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-zinc-800 text-white flex flex-col items-center py-12 px-4">
-      
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-zinc-800 text-white">
+      <div className="max-w-6xl mx-auto px-4 py-16 space-y-12">
+        <header className="text-center space-y-6 animate-fade-in">
+          <h1 className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            {newsletter.title}
+          </h1>
+          <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </header>
 
-      <div className="max-w-4xl w-full text-center mb-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white">{newsletter.title}</h1>
-     
-      </div>
+        <div className="relative group">
+          <img
+            src={newsletter.image}
+            alt={newsletter.title}
+            className="w-full h-96 object-cover rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+        </div>
 
+        <div className="grid gap-8">
+          {newsletter.sections.map((section, index) => (
+            <div 
+              key={index} 
+              className="bg-zinc-900/80 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-zinc-800 hover:border-blue-500/30 transition-all duration-300"
+            >
+              <h2 className="text-3xl font-bold text-blue-400 mb-6">
+                {section.heading}
+              </h2>
 
-      <div className="max-w-4xl w-full overflow-hidden rounded-xl shadow-xl mb-10">
-        <img
-          src={newsletter.image}
-          alt={newsletter.title}
-          className="w-full h-80 object-cover rounded-xl"
-        />
-      </div>
+              {section.image && (
+                <div className="my-6">
+                  <img
+                    src={section.image}
+                    alt=""
+                    className="w-full md:w-3/4 mx-auto rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow duration-300"
+                  />
+                </div>
+              )}
 
-
-      <div className="max-w-3xl w-full flex flex-col gap-8">
-        {newsletter.sections.map((section, index) => (
-          <div key={index} className="bg-zinc-900 p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold text-blue-400">{section.heading}</h2>
-
-            {section.image && (
-              <div className="flex justify-center my-4">
-                <img
-                  src={section.image}
-                  alt=""
-                  className="w-full md:w-3/4 rounded-lg shadow-md"
-                />
-              </div>
-            )}
-
-
-            <p className="text-gray-300 leading-relaxed">{section.content}</p>
-          </div>
-        ))}
+              <p className="text-gray-300 leading-relaxed text-lg">
+                {section.content}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
