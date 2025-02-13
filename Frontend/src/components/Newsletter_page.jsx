@@ -29,7 +29,7 @@ const NewsletterPage = () => {
           <img
             src={newsletter.image}
             alt={newsletter.title}
-            className="w-full h-96 object-cover rounded-2xl shadow-2xl transition-transform duration-300 group-hover:scale-[1.01]"
+            className="w-full h-96 object-cover rounded-2xl shadow-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
         </div>
@@ -49,7 +49,7 @@ const NewsletterPage = () => {
                   <img
                     src={section.image}
                     alt=""
-                    className="w-full md:w-3/4 mx-auto rounded-xl shadow-lg hover:shadow-blue-500/10 transition-shadow duration-300"
+                    className="w-full md:w-3/4 mx-auto rounded-xl shadow-lg "
                   />
                 </div>
               )}

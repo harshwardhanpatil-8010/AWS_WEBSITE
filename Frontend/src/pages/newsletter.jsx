@@ -6,7 +6,7 @@ import LowerSection from "../components/Footer_low";
 
 const Newsletters = () => {
   const navigate = useNavigate();
-
+ 
   return (
     <>
       <Background />
@@ -33,7 +33,7 @@ const Newsletters = () => {
               return (
                 <div
                   key={slug}
-                  className="relative group bg-white border border-gray-700 rounded-xl shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
+                  className="relative group bg-white border border-gray-700 rounded-[40px] shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                   onClick={() => navigate(`/newsletter/${slug}`)}
                 >
                   {/* Image */}

@@ -99,7 +99,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="./"
+              href="https://www.meetup.com/aws-cloud-club-at-mit-world-peace-university-mit-wpu/"
               className="text-white hover:font-bold bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
             >
               <FaMeetup />
@@ -163,7 +163,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="./"
+                href="https://www.meetup.com/aws-cloud-club-at-mit-world-peace-university-mit-wpu/"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
               >

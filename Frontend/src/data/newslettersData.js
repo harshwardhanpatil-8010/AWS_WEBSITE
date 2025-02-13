@@ -21,7 +21,7 @@ const newslettersData = {
         },
       ],
     },
-  
+   
    
     // Add more newsletters here...
   };
