@@ -11,7 +11,7 @@ import NewsletterPage from "./components/Newsletter_page.jsx";
 function App() {
   return (    
       <Router>
-        <div class="container mx-auto px-4">
+       
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/news" element={<Newsletters />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/newsletter/:slug" element={<NewsletterPage/>} />
         </Routes>
-        </div>
+       
 
       </Router>
   );
