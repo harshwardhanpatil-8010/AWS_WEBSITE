@@ -14,7 +14,7 @@ const EventDetails = () => {
   useEffect(() => {
     async function fetchEvent() {
       try {
-        const response = await fetch(`http://localhost:8000/events/${eventId}`);
+        const response = await fetch(`aws-website-4gfi.vercel.app/events/${eventId}`);
         if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
         const data = await response.json();
         setEvent(data);

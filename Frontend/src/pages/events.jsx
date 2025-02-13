@@ -13,7 +13,7 @@ const Events = () => {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const response = await fetch("http://localhost:8000/events");
+        const response = await fetch("aws-website-4gfi.vercel.app/events");
 
         if (!response.ok) {
           throw new Error(`Failed to fetch events: ${response.statusText}`);
