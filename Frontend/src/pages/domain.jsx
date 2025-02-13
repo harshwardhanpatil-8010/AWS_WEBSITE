@@ -94,7 +94,7 @@ const Team = () => {
      About Us
       </h1>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 ">
         <div id="mentors" className="flex flex-col gap-8 sm:gap-12 md:gap-16">
           <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center">Mentors</h2>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
