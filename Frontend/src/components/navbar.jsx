@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu for larger screens */}
-        <ul className="hidden md:flex space-x-4">
+        <ul className="hidden md:flex space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10">
           <li>
             <a
               href="/"

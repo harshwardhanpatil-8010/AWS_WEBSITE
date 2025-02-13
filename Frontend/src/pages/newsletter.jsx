@@ -6,7 +6,7 @@ import LowerSection from "../components/Footer_low";
 
 const Newsletters = () => {
   const navigate = useNavigate();
- 
+
   return (
     <>
       <Background />
@@ -27,13 +27,13 @@ const Newsletters = () => {
           </p>
 
           {/* Newsletter Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 mt-12">
             {Object.keys(newslettersData).map((slug) => {
               const newsletter = newslettersData[slug];
               return (
                 <div
                   key={slug}
-                  className="relative group bg-white border border-gray-700 rounded-[40px] shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
+                  className="relative group bg-white border border-gray-700 rounded-[30px] shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                   onClick={() => navigate(`/newsletter/${slug}`)}
                 >
                   {/* Image */}
