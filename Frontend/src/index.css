@@ -9,16 +9,22 @@
 /* Global responsive adjustments */
 
 /* Global responsive adjustments */
-html {
+html, body {
+  width: 100%;
   font-size: 16px;
+  overflow-x: hidden;
 }
+
 
 @media (max-width: 640px) {
   html {
     font-size: 14px;
   }
 }
-
+.container {
+  max-width: 100%;
+  width: 100%;
+}
 /* Improve touch targets on mobile */
 @media (max-width: 768px) {
   button, 

@@ -13,7 +13,7 @@ const Home = () => {
       <Navbar />
       <Landing />
 
-      <main className="w-full mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
+      <main className="container w-full mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 max-w-7xl">
         <div className="space-y-16 sm:space-y-20 mt-24 sm:mt-32">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-x-10 lg:gap-x-16 transition-transform duration-500 hover:scale-[1.02]">
             <img
