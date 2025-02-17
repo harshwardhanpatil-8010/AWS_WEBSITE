@@ -37,9 +37,23 @@ const EventDetails = () => {
     fetchEvent();
   }, [eventId]);
 
-  if (loading) return <div className="text-center text-gray-600 text-xl font-semibold">Loading Event...</div>;
-  if (error) return <div className="text-center text-red-500 text-xl font-semibold">Error loading event: {error}</div>;
-
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded shadow-lg">
+          <p className="font-bold">Error</p>
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <Background />
