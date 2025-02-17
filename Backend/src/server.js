@@ -2,11 +2,11 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import contactRouter from "./api/auth.js"; 
-import connectDB from "./config/db.js";
-import newslettersRouter from "./routes/newsletter.js";
-import eventsRouter from "./routes/events.js";
-import adminRouter from "./routes/admin.js";
+import contactRouter from "../api/auth.js"; 
+import connectDB from "../config/db.js";
+import newslettersRouter from "../routes/newsletter.js";
+import eventsRouter from "../routes/events.js";
+import adminRouter from "../routes/admin.js";
 import path from "path";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
@@ -18,7 +18,7 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: "https://aws-website.vercel.app/", 
+    origin: "http://localhost:3000", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
