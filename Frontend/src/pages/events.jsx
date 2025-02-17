@@ -64,11 +64,11 @@ const Events = () => {
             Upcoming Events
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
             {events.map((event) => (
               <div
                 key={event._id}
-                className="relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20"
+                className="relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20 cursor-pointer"
                 onClick={() => navigate(`/events/${event._id}`)}
               >
                 {event.coverImage && (
@@ -93,16 +93,9 @@ const Events = () => {
                     })}
                   </span>
                   
-                  <p className="text-gray-300 mt-4 line-clamp-3">
-                    {event.description}
-                  </p>
-                  
-                  <div className="mt-6 flex justify-between items-center">
-                    <button className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
-                      Learn more →
-                    </button>
-                    <span className="text-xs text-gray-500">Click to view details</span>
-                  </div>
+                
+              
+        
                 </div>
               </div>
             ))}
