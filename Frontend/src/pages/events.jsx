@@ -13,7 +13,7 @@ const Events = () => {
  useEffect(() => {
    async function fetchEvents() {
      try {
-       const response = await fetch('http://localhost:8000/events');
+       const response = await fetch('https://aws-backend-production-d3d5.up.railway.app/events');
  
        if (!response.ok) {
          throw new Error(`Failed to fetch events: ${response.statusText}`);

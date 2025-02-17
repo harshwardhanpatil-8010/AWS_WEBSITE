@@ -13,7 +13,7 @@ export default function AdminPage() {
   useEffect(() => {
     const fetchEvents = async () => {
       try{
-        const response = await fetch('http://localhost:8000/events')
+        const response = await fetch('https://aws-backend-production-d3d5.up.railway.app/events')
         const data = await response.json()
         setEvents(data)
       }catch(error){
