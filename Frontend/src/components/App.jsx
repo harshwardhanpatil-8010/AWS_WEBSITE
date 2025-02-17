@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import CardComponent from './CardComponent';
 import { RiArrowRightSLine } from 'react-icons/ri';
 
-
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDelayed, setIsDelayed] = useState(false);
-
+  const [selectedCard, setSelectedCard] = useState(null);
   const domains = [
     {
       text: "Technical Team",
@@ -211,48 +210,49 @@ function HeadsCard() {
   };
 
   return (
-<div className="min-h-[600px] py-8 sm:py-12 md:py-16 flex flex-col items-center">
-      <div className="w-full px-4 sm:px-6 md:px-0">
-        <div className="flex flex-col xl:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7 text-white text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8">
-          <p className="text-center xl:text-left whitespace-nowrap">Know Your Domain</p>
-          <RiArrowRightSLine className="hidden xl:block w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />
-          <RiArrowRightSLine className="xl:hidden w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rotate-90" />
-          <p className="text-center break-words max-w-[250px] sm:max-w-[300px] md:max-w-none">
-            {domains[currentIndex].text}
-          </p>
-        </div>
+    <div className="min-h-[600px] py-8 sm:py-12 md:py-16 flex flex-col items-center px-4 sm:px-6 lg:px-8 w-full overflow-hidden">
+      <div className="w-full text-center">
+        <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-4">Know Your Domain</h2>
+        <p className="text-white text-lg sm:text-xl font-semibold">{domains[currentIndex].text}</p>
       </div>
-      <div className="w-full flex flex-col items-center relative">
+      
+      <div className="w-full flex flex-wrap justify-center items-center relative mt-6 gap-12">
         <button
           onClick={handleClick2}
-          className="hidden sm:block absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10"
+          className="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
         >
           <RiArrowRightSLine size={35} className="rotate-180" />
         </button>
+
+        <div className={`transition-opacity duration-300 ${isDelayed ? 'opacity-0' : 'opacity-100'} w-full max-w-full overflow-hidden`}>  
+          <CardComponent 
+            cardsData={domains[currentIndex].cards} 
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+          />
+        </div>
+
         <button
           onClick={handleClick1}
-          className="hidden sm:block absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10"
+          className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
         >
           <RiArrowRightSLine size={35} />
         </button>
-        <div className={`transition-opacity duration-300 ${isDelayed ? 'opacity-0' : 'opacity-100'} w-full`}>
-          <CardComponent cardsData={domains[currentIndex].cards} />
-        </div>
+      </div>
 
-        <div className="flex sm:hidden justify-center items-center gap-8 mt-8">
-          <button
-            onClick={handleClick2}
-            className="text-white hover:scale-110 transition-transform p-2"
-          >
-            <RiArrowRightSLine size={35} className="rotate-180" />
-          </button>
-          <button
-            onClick={handleClick1}
-            className="text-white hover:scale-110 transition-transform p-2"
-          >
-            <RiArrowRightSLine size={35} />
-          </button>
-        </div>
+      <div className="flex sm:hidden justify-center items-center gap-6 mt-6">
+        <button
+          onClick={handleClick2}
+          className="text-white hover:scale-110 transition-transform p-2"
+        >
+          <RiArrowRightSLine size={30} className="rotate-180" />
+        </button>
+        <button
+          onClick={handleClick1}
+          className="text-white hover:scale-110 transition-transform p-2"
+        >
+          <RiArrowRightSLine size={30} />
+        </button>
       </div>
     </div>
   );
