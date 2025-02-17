@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+
 import videoFile from "../assets/video.mp4";
 
 const Landing = () => {
-  const [loading] = useState(true);
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
-      </div>
-    );
-  }
+  
   return (
     <div className="relative w-screen h-screen overflow-hidden">
       <video
