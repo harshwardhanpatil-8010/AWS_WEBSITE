@@ -13,6 +13,7 @@ const Card = ({ data }) => {
           className="w-full h-full object-cover brightness-90 hover:brightness-100 transition-all duration-300"
           src={data.img}
           alt={data.name}
+          rel="preload"
         />
         <div className="absolute inset-0 bg-black opacity-30 hover:opacity-0 transition-opacity duration-300"></div>
         <div className="absolute bottom-0 right-0 p-4 z-10">

@@ -7,10 +7,12 @@ const Landing = () => {
       <video
         className="absolute top-0 left-0 w-full h-full object-cover aspect-video"
         src={videoFile}
+        rel="preload"
         autoPlay
         loop
         muted
         playsInline
+        alt="AWS landing page video"
       />
 
       {/* Overlay */}
