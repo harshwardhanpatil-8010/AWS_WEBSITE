@@ -18,7 +18,7 @@ const Landing = () => {
         <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl">
           {/* Main Title */}
           <div className="flex items-center gap-2 sm:gap-4 whitespace-nowrap">
-            <h1 className="text-7xl font-bold text-white mb-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2xl:text-6xl font-bold text-white mb-2">
               <b className="text-[#aca6ff]">A</b>mazon <b className="text-[#aca6ff]">W</b>eb <b className="text-[#aca6ff]">S</b>ervices
             </h1>
           </div>

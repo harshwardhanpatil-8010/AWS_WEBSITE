@@ -19,7 +19,7 @@ const Home = () => {
             <img
               src={img1}
               alt="Illustration of AWS Cloud Clubs"
-              className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] min-w-[250px] object-contain mt-6 sm:mt-12 md:mt-32 drop-shadow-[0_0_35px_rgba(59,130,246,0.3)]"
+              className="w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] min-w-[250px] object-contain mt-6 sm:mt-12 md:mt-32"
             />
             <div className="bg-gradient-to-br from-black/50 to-black/30 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 hover:bg-black/60 transition-all duration-500 flex-1 shadow-2xl border border-gray-700/40 transform hover:-translate-y-2">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 sm:mb-8 animate-gradient">

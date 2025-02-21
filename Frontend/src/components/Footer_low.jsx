@@ -8,7 +8,7 @@ const LowerSection = () => {
       
       <div className="flex space-x-6 mb-4">
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/aws.cc.mitwpu/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-purple-400 text-white text-2xl transition-all cursor-pointer"
@@ -21,7 +21,7 @@ const LowerSection = () => {
        
         </a>
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/company/aws-cloud-club-mit-wpu/posts/?feedView=all"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-blue-500 text-white text-2xl transition-all cursor-pointer"
@@ -34,7 +34,7 @@ const LowerSection = () => {
        
         </a>
         <a
-            href="https://www.meetup.com"
+            href="https://www.meetup.com/aws-cloud-club-at-mit-world-peace-university-mit-wpu/"
              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 text-white text-2xl transition-all cursor-pointer"

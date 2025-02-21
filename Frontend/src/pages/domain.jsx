@@ -22,6 +22,7 @@ const Card = ({ data }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300 transform hover:scale-110"
+               aria-label="Visit my LinkedIn profile"
             >
               <FaLinkedinIn className="text-white text-lg sm:text-xl" />
             </a>

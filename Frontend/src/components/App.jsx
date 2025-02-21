@@ -220,6 +220,7 @@ function HeadsCard() {
         <button
           onClick={handleClick2}
           className="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
+          aria-label="navigation"
         >
           <RiArrowRightSLine size={35} className="rotate-180" />
         </button>
@@ -235,6 +236,7 @@ function HeadsCard() {
         <button
           onClick={handleClick1}
           className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
+          aria-label="navigation"
         >
           <RiArrowRightSLine size={35} />
         </button>
@@ -244,12 +246,14 @@ function HeadsCard() {
         <button
           onClick={handleClick2}
           className="text-white hover:scale-110 transition-transform p-2"
+          aria-label="navigation"
         >
           <RiArrowRightSLine size={30} className="rotate-180" />
         </button>
         <button
           onClick={handleClick1}
           className="text-white hover:scale-110 transition-transform p-2"
+          aria-label="navigation"
         >
           <RiArrowRightSLine size={30} />
         </button>

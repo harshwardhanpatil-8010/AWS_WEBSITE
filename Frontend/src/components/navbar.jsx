@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center font-bold w-full">
         {/* Logo Section */}
         <div className="flex items-center space-x-1">
-          <img src={logo} alt="Logo" className="w-12 h-12 rounded-full text-bold" />
+          <img src={logo} alt="Logo" className="w-12 h-12 rounded-full" />
         </div>
 
         {/* Menu for larger screens */}
@@ -65,6 +65,7 @@ const Navbar = () => {
             <a
               href="/"
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
+              aria-label="Go to Homepage"
             >
               <IoHome />
               <span>HOME</span>
@@ -74,6 +75,7 @@ const Navbar = () => {
             <a
               href="./domain"
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
+              aria-label="Go to Aboutuspage"
             >
               <RiTeamFill />
               <span>ABOUT US</span>
@@ -83,6 +85,7 @@ const Navbar = () => {
             <a
               href="./events"
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
+              aria-label="Go to Eventspage"
             >
               <IoCalendar />
               <span>EVENTS</span>
@@ -92,6 +95,7 @@ const Navbar = () => {
             <a
               href="./news"
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
+              aria-label="Go to Newsletterpage"
             >
               <FaNewspaper />
               <span>NEWSLETTER</span>
@@ -101,6 +105,7 @@ const Navbar = () => {
             <a
               href="https://www.meetup.com/aws-cloud-club-at-mit-world-peace-university-mit-wpu/"
               className="text-white hover:font-bold bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
+              aria-label="Go to Meetuppage"
             >
               <FaMeetup />
               <span>JOIN US</span>
@@ -110,7 +115,7 @@ const Navbar = () => {
 
         {/* Hamburger Icon for mobile screens */}
         <button
-          className="md:hidden text-black text-3xl"
+          className="md:hidden text-black text-3xl" aria-label="Open Menu"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -126,6 +131,7 @@ const Navbar = () => {
                 href="/"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Go to Homepage"
               >
                 <IoHome />
                 <span>HOME</span>
@@ -136,6 +142,7 @@ const Navbar = () => {
                 href="./domain"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Go to Aboutuspage"
               >
                 <RiTeamFill />
                 <span>ABOUT US</span>
@@ -146,6 +153,7 @@ const Navbar = () => {
                 href="./events"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Go to Eventspage"
               >
                 <IoCalendar />
                 <span>EVENTS</span>
@@ -156,6 +164,7 @@ const Navbar = () => {
                 href="./news"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Go to Newsletterpage"
               >
                 <FaNewspaper />
                 <span>NEWSLETTER</span>
@@ -166,6 +175,7 @@ const Navbar = () => {
                 href="https://www.meetup.com/aws-cloud-club-at-mit-world-peace-university-mit-wpu/"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Go to Meetuppage"
               >
                 <FaMeetup />
                 <span>JOIN US</span>
