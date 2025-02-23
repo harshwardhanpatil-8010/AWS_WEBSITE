@@ -46,7 +46,7 @@ const LowerSection = () => {
              />
             </a>
             <a 
-              href="awsclub@mitwpu.edu.in"
+              href="mailto:awsclub@mitwpu.edu.in"
               className="group relative"
             >
             <img 
