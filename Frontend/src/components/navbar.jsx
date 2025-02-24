@@ -73,7 +73,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="./domain"
+              href="./aboutus"
               className="text-black hover:font-bold hover:text-white hover:bg-black px-4 py-2 rounded-full transition-all duration-300 flex items-center space-x-2"
               aria-label="Go to Aboutuspage"
             >
@@ -139,7 +139,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="./domain"
+                href="./aboutus"
                 className="text-black hover:font-bold hover:text-white hover:bg-black px-3 py-1 rounded transition-all duration-300 flex items-center justify-center space-x-2"
                 onClick={() => setMenuOpen(false)}
                 aria-label="Go to Aboutuspage"

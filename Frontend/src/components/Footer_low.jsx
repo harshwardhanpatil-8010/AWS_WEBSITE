@@ -45,7 +45,16 @@ const LowerSection = () => {
              className="w-12 h-12 object-contain transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
              />
             </a>
-
+            <a 
+              href="mailto:awsclub@mitwpu.edu.in"
+              className="group relative"
+            >
+            <img 
+                src="https://images.seeklogo.com/logo-png/38/2/gmail-new-2020-logo-png_seeklogo-389043.png" 
+                alt="Email Contact" 
+                className="w-12 h-12 object-contain transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
+              />
+              </a>
       </div>
 
       

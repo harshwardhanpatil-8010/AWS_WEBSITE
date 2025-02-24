@@ -29,6 +29,7 @@ const NewsletterPage = () => {
           <img
             src={newsletter.image}
             alt={newsletter.title}
+            rel="preload"
             className="w-full h-96 object-cover rounded-2xl shadow-2xl"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>

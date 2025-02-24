@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import CardComponent from './CardComponent';
 import { RiArrowRightSLine } from 'react-icons/ri';
 
+
+
 function HeadsCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDelayed, setIsDelayed] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null);
+
   const domains = [
     {
       text: "Technical Team",
@@ -210,53 +212,44 @@ function HeadsCard() {
   };
 
   return (
-    <div className="min-h-[600px] py-8 sm:py-12 md:py-16 flex flex-col items-center px-4 sm:px-6 lg:px-8 w-full overflow-hidden">
-      <div className="w-full text-center">
-        <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-4">Know Your Domain</h2>
-        <p className="text-white text-lg sm:text-xl font-semibold">{domains[currentIndex].text}</p>
+   <div className="min-h-[600px] py-8 sm:py-12 md:py-16 flex flex-col items-center">
+      <div className="w-full px-4 sm:px-6 md:px-0">
+        <div className="flex flex-col items-center gap-4 text-white text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8">
+          <p className="text-center break-words max-w-[250px] sm:max-w-[300px] md:max-w-none">
+            {domains[currentIndex].text}
+          </p>
+        </div>
       </div>
-      
-      <div className="w-full flex flex-wrap justify-center items-center relative mt-6 gap-12">
+      <div className="w-full flex flex-col items-center relative">
         <button
           onClick={handleClick2}
-          className="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
-          aria-label="navigation"
+          className="hidden sm:block absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10"
         >
           <RiArrowRightSLine size={35} className="rotate-180" />
         </button>
-
-        <div className={`transition-opacity duration-300 ${isDelayed ? 'opacity-0' : 'opacity-100'} w-full max-w-full overflow-hidden`}>  
-          <CardComponent 
-            cardsData={domains[currentIndex].cards} 
-            selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
-          />
+        <button
+  onClick={handleClick1}
+  className="hidden sm:block absolute right-24 sm:right-28 md:right-20 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10"
+>
+  <RiArrowRightSLine size={35} />
+</button>
+        <div className={`transition-all duration-500 ${isDelayed ? 'opacity-0 scale-95' : 'opacity-100 scale-100'} w-full`}>
+          <CardComponent cardsData={domains[currentIndex].cards} />
         </div>
-
-        <button
-          onClick={handleClick1}
-          className="absolute right-2 sm:right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-white hover:scale-110 transition-transform p-2 z-10 hidden sm:block"
-          aria-label="navigation"
-        >
-          <RiArrowRightSLine size={35} />
-        </button>
-      </div>
-
-      <div className="flex sm:hidden justify-center items-center gap-6 mt-6">
-        <button
-          onClick={handleClick2}
-          className="text-white hover:scale-110 transition-transform p-2"
-          aria-label="navigation"
-        >
-          <RiArrowRightSLine size={30} className="rotate-180" />
-        </button>
-        <button
-          onClick={handleClick1}
-          className="text-white hover:scale-110 transition-transform p-2"
-          aria-label="navigation"
-        >
-          <RiArrowRightSLine size={30} />
-        </button>
+        <div className="flex sm:hidden justify-center items-center gap-8 mt-8">
+          <button
+            onClick={handleClick2}
+            className="text-white hover:scale-110 transition-transform p-2"
+          >
+            <RiArrowRightSLine size={35} className="rotate-180" />
+          </button>
+          <button
+            onClick={handleClick1}
+            className="text-white hover:scale-110 transition-transform p-2"
+          >
+            <RiArrowRightSLine size={35} />
+          </button>
+        </div>
       </div>
     </div>
   );

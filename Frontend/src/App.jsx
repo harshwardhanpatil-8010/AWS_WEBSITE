@@ -17,7 +17,7 @@ function App() {
           <Route path="/news" element={<Newsletters />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:eventId" element={<EventDetails />} />
-          <Route path="/domain" element={<Team />} />
+          <Route path="/aboutus" element={<Team />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/newsletter/:slug" element={<NewsletterPage/>} />
         </Routes>
