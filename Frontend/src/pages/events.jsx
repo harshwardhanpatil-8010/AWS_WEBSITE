@@ -11,23 +11,22 @@ const Events = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchEvents() {
+    const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:8000/events");
 
-        if (!response.ok) {
-          throw new Error(`Failed to fetch events: ${response.statusText}`);
-        }
+        const response = await fetch(process.env.REACT_APP_API_URL + "/events");
+
+
+        if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
 
         const data = await response.json();
         setEvents(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-        setError(error.message);
+      } catch (err) {
+        setError(err.message || "Something went wrong!");
+      } finally {
         setLoading(false);
       }
-    }
+    };
 
     fetchEvents();
   }, []);
@@ -61,6 +60,7 @@ const Events = () => {
 
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-4xl font-extrabold text-white mb-12 text-center">
+
             🌟 Event Timeline 🌟
           </h2>
 
@@ -113,10 +113,16 @@ const Events = () => {
         {/* <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-4xl font-extrabold text-white mb-12 text-center">
             🌟 Upcoming Events
+
+            🌟 Event Timeline
+
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
+          <ul className="relative grid gap-8 max-w-3xl w-full mx-auto">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 h-full"></div>
+
             {events.map((event) => (
+
               <div
                 key={event._id}
                 className="relative overflow-hidden rounded-2xl bg-gray-800 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20 cursor-pointer"
@@ -134,14 +140,33 @@ const Events = () => {
                 
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+
+              <li key={event._id} className="relative flex flex-col items-center sm:items-start sm:flex-row sm:odd:flex-row-reverse">
+                <button
+                  className="bg-gray-800 p-6 shadow-lg rounded-md border border-gray-700 hover:border-blue-500 transition-all transform hover:-translate-y-2"
+                  onClick={() => navigate(`/events/${event._id}`)}
+                >
+                  {event.coverImage && (
+                    <div className="h-64 overflow-hidden rounded-t-2xl">
+                      <img
+                        src={event.coverImage}
+                        alt={event.name}
+                        className="w-full h-full object-cover transition-transform duration-500"
+                      />
+                    </div>
+                  )}
+
+                  <h3 className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+
                     {event.name}
                   </h3>
-                  <span className="block text-sm text-gray-400 mt-2">
-                    {new Date(event.date).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric'
+                  <p className="text-sm text-gray-400 mt-2">
+                    {new Date(event.date).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
                     })}
+
                   </span>
                   <p className="mt-3 text-gray-300 text-sm">
                     {event.description
@@ -154,10 +179,23 @@ const Events = () => {
           </div>
         </main> */}
 
+                  </p>
+
+                  <p className="mt-3 text-gray-300 text-sm">
+                    {event.description ? `${event.description.slice(0, 100)}...` : "No description available."}
+                  </p>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </main>
+
+
         <LowerSection />
       </div>
     </>
   );
 };
 
-export default Events;
+
+export default Events;

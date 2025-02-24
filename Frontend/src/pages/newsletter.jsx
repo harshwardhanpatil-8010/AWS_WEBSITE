@@ -26,8 +26,8 @@ const Newsletters = () => {
             Stay updated with the latest trends in technology, analytics, AI, and cloud computing.
           </p>
 
-          {/* Newsletter Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 mt-12">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8 mt-12">
             {Object.keys(newslettersData).map((slug) => {
               const newsletter = newslettersData[slug];
               return (
@@ -36,17 +36,17 @@ const Newsletters = () => {
                   className="relative group bg-white border border-gray-700 rounded-[30px] shadow-xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                   onClick={() => navigate(`/newsletter/${slug}`)}
                 >
-                  {/* Image */}
+                  
                   <div className="relative h-48 w-full">
                     <img
                       src={newsletter.image}
                       className="h-full w-full object-cover rounded-t-xl"
                       alt={newsletter.title}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-all"></div>
+                    <div className="absolute group-hover:bg-opacity-50 transition-all"></div>
                   </div>
 
-                  {/* Text Content */}
+                 
                   <div className="p-5 flex flex-col gap-2">
                     <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition">
                       {newsletter.title}

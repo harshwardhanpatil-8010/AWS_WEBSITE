@@ -21,7 +21,16 @@ const EventDetails = () => {
     async function fetchEvent() {
       try {
         const response = await fetch(`http://localhost:8000/events/${eventId}`);
-        if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
+
+        const contentType = response.headers.get("content-type");
+        console.log("Response Content-Type:", contentType);
+        if (!response.ok) 
+          throw new Error(`Error: ${response.status} ${response.statusText}`);
+        if (!contentType || !contentType.includes("application/json")) {
+          const text = await response.text();
+          console.error("Received non-JSON response:", text);
+          throw new Error("Expected JSON, received HTML or another format.");
+        }
         const data = await response.json();
         setEvent(data);
       } catch (error) {
@@ -177,4 +186,6 @@ const EventDetails = () => {
   );
 };
 
-export default EventDetails;
+
+export default EventDetails;                                                                                                                               
+

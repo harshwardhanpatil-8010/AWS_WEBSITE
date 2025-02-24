@@ -5,7 +5,7 @@ const Landing = () => {
     <div className="relative w-screen h-screen overflow-hidden">
       {/* Video Background */}
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover aspect-video"
+        className="responsive-video absolute top-0 left-0 w-full h-full object-cover aspect-video "
         src={videoFile}
         rel="preload"
         autoPlay
