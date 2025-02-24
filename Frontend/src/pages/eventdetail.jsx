@@ -14,7 +14,7 @@ const EventDetails = () => {
   useEffect(() => {
     async function fetchEvent() {
       try {
-        const response = await fetch(`https://aws-backend-production-d3d5.up.railway.app/events/${eventId}`);
+        const response = await fetch(`http://localhost:8000/events/${eventId}`);
         const contentType = response.headers.get("content-type");
         console.log("Response Content-Type:", contentType);
         if (!response.ok) 
@@ -132,4 +132,4 @@ const EventDetails = () => {
   );
 };
 
-export default EventDetails;                                                                                                                                 
+export default EventDetails;                                                                                                                               
