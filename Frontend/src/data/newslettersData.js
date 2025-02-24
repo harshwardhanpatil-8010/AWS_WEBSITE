@@ -1,7 +1,7 @@
 const newslettersData = {
   "big-data-analytics": {
     title: "Big Data And Analytics",
-    image: "https://effvision.com/wp-content/uploads/2024/06/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1.jpg",
+    image: "https://media.licdn.com/dms/image/v2/D4D12AQH2sByg9VqvPQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1726481084494?e=1746057600&v=beta&t=901suUd8f9_87yo7DzDKS4nCMOw3e2reZ571EAREF_4",
     sections: [
     
       {
